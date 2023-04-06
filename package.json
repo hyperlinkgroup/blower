@@ -1,22 +1,35 @@
 {
-  "name": "blower",
-  "version": "0.0.1",
-  "description": "A frontend framework for modern browsers",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "keywords": [
-    "css",
-    "sass",
-    "framework",
-    "ui",
-    "ux",
-    "mobile-first",
-    "responsive",
-    "front-end",
-    "web"
-  ],
-  "author": "HYPERLINK Group",
-  "license": "MIT"
+	"name": "blower",
+	"version": "0.0.1",
+	"description": "A frontend framework for modern browsers",
+	"main": "index.js",
+	"scripts": {
+		"watch": "sass --watch scss/blower.scss dist/css/blower.css && npm run watchAutoprefixer",
+		"watchAutoprefixer": "postcss dist/css/*.css --dir dist/css/ --watch --use autoprefixer",
+		"watchDocsAutoprefixer": "postcss docs/public/css/*.css --dir docs/public/css/ --watch --use autoprefixer",
+		"build": "sass scss/blower.scss dist/css/blower.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer",
+		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer",
+		"lint": "stylelint '**/*.scss'",
+		"lint-fix": "stylelint '**/*.scss' --fix"
+	},
+	"keywords": [
+		"css",
+		"sass",
+		"framework",
+		"ui",
+		"ux",
+		"mobile-first",
+		"responsive",
+		"front-end",
+		"web"
+	],
+	"author": "HYPERLINK Group",
+	"license": "MIT",
+	"devDependencies": {
+		"autoprefixer": "^10.4.14",
+		"postcss": "^8.4.21",
+		"postcss-cli": "^10.1.0",
+		"sass": "^1.60.0",
+		"stylelint": "^15.4.0"
+	}
 }

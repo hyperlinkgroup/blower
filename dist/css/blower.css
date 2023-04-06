@@ -1,0 +1,10 @@
+@layer blower {
+  @layer reset, base, layout, components, utilities;
+  @layer reset {
+    * {
+      box-sizing: border-box;
+    }
+  }
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJsb3dlci5jc3MiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUE7RUFDRSxpREFBaUQ7RUFDakQ7SUFDRTtNQUNFLHNCQUFzQjtJQUN4QjtFQUNGO0FBQ0YiLCJmaWxlIjoiYmxvd2VyLmNzcyIsInNvdXJjZXNDb250ZW50IjpbIkBsYXllciBibG93ZXIge1xuICBAbGF5ZXIgcmVzZXQsIGJhc2UsIGxheW91dCwgY29tcG9uZW50cywgdXRpbGl0aWVzO1xuICBAbGF5ZXIgcmVzZXQge1xuICAgICoge1xuICAgICAgYm94LXNpemluZzogYm9yZGVyLWJveDtcbiAgICB9XG4gIH1cbn1cbiJdfQ== */
