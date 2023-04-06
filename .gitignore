@@ -1,0 +1,14 @@
+# IDE files and folders
+.idea/
+.vscode/
+.history/
+
+# Dependency directories
+node_modules/
+npm-debug.log
+
+# Sass
+.sass-cache/
+*.css.map
+*.sass.map
+*.scss.map

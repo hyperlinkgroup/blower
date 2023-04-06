@@ -1,0 +1,22 @@
+{
+  "name": "blower",
+  "version": "0.0.1",
+  "description": "A frontend framework for modern browsers",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "css",
+    "sass",
+    "framework",
+    "ui",
+    "ux",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "web"
+  ],
+  "author": "HYPERLINK Group",
+  "license": "MIT"
+}
