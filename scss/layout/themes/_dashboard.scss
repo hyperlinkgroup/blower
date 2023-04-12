@@ -1,0 +1,43 @@
+.layout-theme-dashboard {
+	--size-sidebar: 300px;
+	--spacing-segments: 1rem;
+	--area-row-first: 'sidebar header';
+	--area-row-last: 'sidebar footer';
+
+	display: grid;
+	grid-template-columns: var(--size-sidebar) 1fr;
+	grid-template-rows: auto 1fr auto;
+	grid-template-areas:
+		var(--area-row-first)
+		'sidebar main'
+		var(--area-row-last);
+	min-height: 100vh;
+
+	.layout-sidebar {
+		grid-area: sidebar;
+		padding: var(--spacing-segments);
+	}
+
+	.layout-main {
+		grid-area: main;
+		padding: var(--spacing-segments);
+	}
+
+	.layout-header {
+		grid-area: header;
+		padding: var(--spacing-segments);
+	}
+
+	.layout-footer {
+		grid-area: footer;
+		padding: var(--spacing-segments);
+	}
+
+	&.has-no-header, &:not(:has(.layout-header)) {
+		--area-row-first: 'sidebar main';
+	}
+
+	&.has-no-footer, &:not(:has(.layout-footer)) {
+		--area-row-last: 'sidebar main';
+	}
+}

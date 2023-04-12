@@ -2,6 +2,22 @@
 	@layer reset, base, layout, components, utilities;
 
 	@layer reset {
-		@import "reset";
+		@import 'reset';
+	}
+
+	@layer base {
+
+	}
+
+	@layer layout {
+		@import 'layout';
+	}
+
+	@layer components {
+
+	}
+
+	@layer utilities {
+
 	}
 }
