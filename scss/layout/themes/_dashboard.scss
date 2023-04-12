@@ -1,6 +1,9 @@
+@use '../../functions' as fn;
+@use '../../mixins' as mx;
+
 .layout-theme-dashboard {
 	--size-sidebar: 300px;
-	--spacing-segments: 1rem;
+	--spacing-segments: #{fn.spacing(2)};
 	--area-row-first: 'sidebar header';
 	--area-row-last: 'sidebar footer';
 
@@ -11,7 +14,7 @@
 		var(--area-row-first)
 		'sidebar main'
 		var(--area-row-last);
-	min-height: 100vh;
+	@include mx.viewport-height(100, 'min');
 
 	.layout-sidebar {
 		grid-area: sidebar;

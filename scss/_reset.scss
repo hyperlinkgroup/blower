@@ -1,3 +1,5 @@
+@use 'mixins' as mx;
+
 *, *::before, *::after {
 	box-sizing: border-box;
 }
@@ -10,8 +12,7 @@ html {
 body {
 	margin: 0;
 	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Oxygen-Sans,Ubuntu,Cantarell,"Helvetica Neue",sans-serif;
-	min-height: 100vh; // Fallback for browser that don't support dynamic viewport units yet
-	min-height: 100svh;
+	@include mx.viewport-height(100, 'min');
 }
 
 pre,

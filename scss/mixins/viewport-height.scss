@@ -1,0 +1,12 @@
+/// Adds a viewport height unit to a value with a fallback for browsers that don't support dynamic viewport units yet.
+///
+/// @param {Number} $value			- The value to add the viewport height unit to.
+/// @param {String} $type			- The type of viewport height unit to use. Can be 'min-', 'max-' or null.
+/// @param {String} $dynamicUnit	- The dynamic viewport height unit to use. For Example 'svh', 'dvh' or 'lvh'
+@mixin viewport-height($value, $type: null, $dynamicUnit: 'svh') {
+	@if $type {
+		$type: '#{$type}-';
+	}
+	#{$type}height: #{$value}vh; // Fallback for browser that don't support dynamic viewport units yet
+	#{$type}height: #{$value}#{$dynamicUnit};
+}
