@@ -1,0 +1,8 @@
+@use 'sass:color';
+
+$primary: #4cb286 !default;
+$primary-light: color.mix($primary, #fff, 50%) !default;
+$primary-dark: color.mix($primary, #000, 50%) !default;
+
+$text-light: color.mix($primary, #FFF, 10%) !default;
+$text-dark: color.mix($primary, #000, 20%) !default;
