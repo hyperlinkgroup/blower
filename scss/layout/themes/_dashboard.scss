@@ -34,6 +34,13 @@
 			background: linear-gradient(to right, transparent, rgba(0,0,0,.1));
 			z-index: -1;
 		}
+
+		.section-title {
+			margin-block: fn.spacing(3) fn.spacing(.5);
+			font-size: 1.25rem;
+			font-weight: 600;
+			color: color.$text-light;
+		}
 	}
 
 	.layout-main {
