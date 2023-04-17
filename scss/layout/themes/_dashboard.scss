@@ -3,7 +3,7 @@
 @use '../../functions' as fn;
 @use '../../mixins' as mx;
 
-.layout-theme-dashboard {
+.theme-dashboard {
 	--size-sidebar: 300px;
 	--spacing-segments: #{fn.spacing(2)};
 	--area-row-first: 'sidebar header';

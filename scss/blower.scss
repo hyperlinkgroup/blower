@@ -1,23 +1,13 @@
 @layer blower {
 	@layer reset, base, layout, components, utilities;
 
-	@layer reset {
-		@import 'reset';
-	}
+	@layer reset { @import 'reset'; }
 
-	@layer base {
+	@layer base {  }
 
-	}
+	@layer layout {  @import 'layout'; }
 
-	@layer layout {
-		@import 'layout';
-	}
+	@layer components {  }
 
-	@layer components {
-
-	}
-
-	@layer utilities {
-
-	}
+	@layer utilities {  }
 }
