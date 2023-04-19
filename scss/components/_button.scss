@@ -13,9 +13,6 @@
 	--color-button-background-active: #{color.$primary-darker};
 	--color-button-text-active: #FFF;
 	--color-button-border-active: #{color.$primary-darker};
-	--color-button-background-focus: #{color.$primary};
-	--color-button-text-focus: #FFF;
-	--color-button-border-focus: #{color.$primary};
 	--spacing-button: #{fn.spacing()} #{fn.spacing(2)};
 	--border-radius-button: 4px;
 	--border-width-button: 1px;
@@ -42,7 +39,7 @@
 		color: var(--color-button-text-hover);
 	}
 
-	&:active {
+	&:active:not(:disabled) {
 		background-color: var(--color-button-background-active);
 		border-color: var(--color-button-border-active);
 		color: var(--color-button-text-active);
@@ -55,16 +52,64 @@
 
 	&--primary {}
 
-	&--secondary {}
+	&--secondary {
+		--color-button-background: #{color.$gray-100};
+		--color-button-text: #{color.$gray-900};
+		--color-button-border: #{color.$gray-100};
+		--color-button-background-hover: #{color.$gray-500};
+		--color-button-text-hover: #FFF;
+		--color-button-border-hover: #{color.$gray-500};
+		--color-button-background-active: #{color.$gray-900};
+		--color-button-text-active: #FFF;
+		--color-button-border-active: #{color.$gray-900};
+	}
 
-	&--tertiary {}
+	&--tertiary {
+		--color-button-background: transparent;
+		--color-button-text: #{color.$gray-900};
+		--color-button-border: transparent;
+		--color-button-background-hover: #{color.$gray-400};
+		--color-button-text-hover: #FFF;
+		--color-button-border-hover: #{color.$gray-400};
+		--color-button-background-active: #{color.$gray-800};
+		--color-button-text-active: #FFF;
+		--color-button-border-active: #{color.$gray-800};
+	}
 
-	&--theme {}
+	&--destructive {
+		--color-button-background: #{color.$danger-500};
+		--color-button-text: #FFF;
+		--color-button-border: #{color.$danger-500};
+		--color-button-background-hover: #{color.$danger-600};
+		--color-button-text-hover: #FFF;
+		--color-button-border-hover: #{color.$danger-600};
+		--color-button-background-active: #{color.$danger-700};
+		--color-button-text-active: #FFF;
+		--color-button-border-active: #{color.$danger-700};
+	}
 
-	&--destructive {}
+	&--dark {
+		--color-button-background: #{color.$gray-900};
+		--color-button-text: #FFF;
+		--color-button-border: #{color.$gray-900};
+		--color-button-background-hover: #{color.$gray-600};
+		--color-button-text-hover: #FFF;
+		--color-button-border-hover: #{color.$gray-600};
+		--color-button-background-active: #{color.$gray-500};
+		--color-button-text-active: #FFF;
+		--color-button-border-active: #{color.$gray-500};
+	}
 
-	&--dark {}
-
-	&--light {}
+	&--light {
+		--color-button-background: #{color.$gray-100};
+		--color-button-text: #{color.$gray-900};
+		--color-button-border: #{color.$gray-100};
+		--color-button-background-hover: #{color.$gray-200};
+		--color-button-text-hover: #{color.$gray-900};
+		--color-button-border-hover: #{color.$gray-200};
+		--color-button-background-active: #{color.$gray-300};
+		--color-button-text-active: #{color.$gray-900};
+		--color-button-border-active: #{color.$gray-300};
+	}
 
 }
