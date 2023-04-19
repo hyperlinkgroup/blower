@@ -1,3 +1,70 @@
+@use '../variables/color';
+@use '../variables/transition';
+
+@use '../functions' as fn;
+
 .button {
+	--color-button-background: #{color.$primary};
+	--color-button-text: #FFF;
+	--color-button-border: #{color.$primary};
+	--color-button-background-hover: #{color.$primary-dark};
+	--color-button-text-hover: #FFF;
+	--color-button-border-hover: #{color.$primary-dark};
+	--color-button-background-active: #{color.$primary-darker};
+	--color-button-text-active: #FFF;
+	--color-button-border-active: #{color.$primary-darker};
+	--color-button-background-focus: #{color.$primary};
+	--color-button-text-focus: #FFF;
+	--color-button-border-focus: #{color.$primary};
+	--spacing-button: #{fn.spacing()} #{fn.spacing(2)};
+	--border-radius-button: 4px;
+	--border-width-button: 1px;
+	--font-size-button: 1rem;
+	--font-weight-button: 600;
+
+	padding: var(--spacing-button);
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: var(--border-radius-button);
+	background-color: var(--color-button-background);
+	color: var(--color-button-text);
+	font-size: var(--font-size-button);
+	font-weight: var(--font-weight-button);
+	text-decoration: none;
+	border: var(--border-width-button) solid var(--color-button-border);
+	transition-property: background-color, border-color, color;
+	transition-duration: #{transition.$speed-fast};
+
+	&:is(:hover, :focus-visible):not(:disabled) {
+		background-color: var(--color-button-background-hover);
+		border-color: var(--color-button-border-hover);
+		color: var(--color-button-text-hover);
+	}
+
+	&:active {
+		background-color: var(--color-button-background-active);
+		border-color: var(--color-button-border-active);
+		color: var(--color-button-text-active);
+	}
+
+	&:disabled {
+		opacity: 0.5;
+		cursor: not-allowed;
+	}
+
+	&--primary {}
+
+	&--secondary {}
+
+	&--tertiary {}
+
+	&--theme {}
+
+	&--destructive {}
+
+	&--dark {}
+
+	&--light {}
 
 }

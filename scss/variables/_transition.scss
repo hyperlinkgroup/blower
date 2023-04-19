@@ -1,0 +1,6 @@
+/// Duration of transitions
+$speed-instant:			100ms !default; // e.g. for toggles
+$speed-fast:			200ms !default; // e.g. for color transitions etc
+$speed-regular:			300ms !default; // e.g. for transform and co
+$speed-slow:			400ms !default; // e.g. for detailed transitions
+$speed-slow-fade-out:	1000ms !default; // e.g. for situations in which something is to be faded out slowly
