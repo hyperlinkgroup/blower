@@ -3,6 +3,11 @@
 $default-min-bp: 320px;
 $default-max-bp: 1280px;
 
+/// Rounds a number to a specified number of decimal places.
+///
+/// @param {Number} $number
+/// @param {Number} $decimals
+/// @return {Number}
 @function round($number, $decimals: 0) {
 	$n: 1;
 	@if $decimals > 0 {
@@ -10,19 +15,40 @@ $default-max-bp: 1280px;
 			$n: $n * 10;
 		}
 	}
+
 	@return math.div(math.round($number * $n), $n);
 }
 
+/// Converts a pixel value to a rem value.
+///
+/// @param {Number} $px
+/// @return {Number}
 @function px-to-rem($px) {
 	$rems: math.div($px, 16px) * 1rem;
+
 	@return $rems;
 }
 
-@function fluid($min-size, $max-size, $min-breakpoint: $default-min-bp, $max-breakpoint: $default-max-bp, $unit: vw) {
+/// Creates a fluid unit to use for font sizes, paddings, margins, etc.
+///
+/// @param {Number} $min-size
+/// @param {Number} $max-size
+/// @param {Number} $min-breakpoint
+/// @param {Number} $max-breakpoint
+/// @param {String} $unit
+/// @return {String}
+@function fluid(
+	$min-size,
+	$max-size,
+	$min-breakpoint: $default-min-bp,
+	$max-breakpoint: $default-max-bp,
+	$unit: vw
+) {
 	$slope: math.div($max-size - $min-size, $max-breakpoint - $min-breakpoint);
 	$slope-to-unit: round($slope * 100, 2);
 	$intercept-rem: round(px-to-rem($min-size - $slope * $min-breakpoint), 2);
 	$min-size-rem: round(px-to-rem($min-size), 2);
 	$max-size-rem: round(px-to-rem($max-size), 2);
+
 	@return clamp(#{$min-size-rem}, #{$slope-to-unit}#{$unit} + #{$intercept-rem}, #{$max-size-rem});
 }
