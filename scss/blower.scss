@@ -7,7 +7,7 @@
 
 	@layer layout {  @import 'layout'; }
 
-	@layer components {  }
+	@layer components { @import 'components'; }
 
 	@layer utilities {  }
 }
