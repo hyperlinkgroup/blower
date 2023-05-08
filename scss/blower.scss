@@ -9,5 +9,5 @@
 
 	@layer components { @import 'components'; }
 
-	@layer utilities {  }
+	@layer utilities { @import 'utilities'; }
 }
