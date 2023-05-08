@@ -62,6 +62,10 @@
 		--color-button-background-active: #{color.$gray-900};
 		--color-button-text-active: #FFF;
 		--color-button-border-active: #{color.$gray-900};
+
+		&.button--outline {
+			--color-button-text: #{color.$gray-900};
+		}
 	}
 
 	&--tertiary {
@@ -74,18 +78,22 @@
 		--color-button-background-active: #{color.$gray-800};
 		--color-button-text-active: #FFF;
 		--color-button-border-active: #{color.$gray-800};
+
+		&.button--outline {
+			--color-button-text: #{color.$gray-900};
+		}
 	}
 
 	&--destructive {
 		--color-button-background: #{color.$danger-500};
 		--color-button-text: #FFF;
 		--color-button-border: #{color.$danger-500};
-		--color-button-background-hover: #{color.$danger-600};
+		--color-button-background-hover: #{color.$danger-700};
 		--color-button-text-hover: #FFF;
-		--color-button-border-hover: #{color.$danger-600};
-		--color-button-background-active: #{color.$danger-700};
+		--color-button-border-hover: #{color.$danger-700};
+		--color-button-background-active: #{color.$danger-800};
 		--color-button-text-active: #FFF;
-		--color-button-border-active: #{color.$danger-700};
+		--color-button-border-active: #{color.$danger-800};
 	}
 
 	&--dark {
@@ -110,6 +118,26 @@
 		--color-button-background-active: #{color.$gray-300};
 		--color-button-text-active: #{color.$gray-900};
 		--color-button-border-active: #{color.$gray-300};
+
+		&.button--outline {
+			--color-button-text: #{color.$gray-900};
+		}
 	}
 
+	&--small {
+		--spacing-button: #{fn.spacing(.75)} #{fn.spacing(1.5)};
+		--font-size-button: .75rem;
+	}
+
+	&--large {
+		--spacing-button: #{fn.spacing(1.5)} #{fn.spacing(3)};
+		--font-size-button: 1.25rem;
+	}
+
+	&--outline {
+		--color-button-text: var(--color-button-background);
+		--color-button-border: var(--color-button-background);
+
+		background-color: transparent;
+	}
 }
