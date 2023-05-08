@@ -132,4 +132,11 @@
 			--color-button-text: #{color.$gray-900};
 		}
 	}
+
+	&:has(.is-icon),
+	&.has-icon {
+		display: inline-flex;
+		align-items: center;
+		gap: .5em;
+	}
 }
