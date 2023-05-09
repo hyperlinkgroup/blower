@@ -138,4 +138,8 @@
 		align-items: center;
 		gap: .5em;
 	}
+
+	&--rounded {
+		--border-radius-button: 200px;
+	}
 }
