@@ -3,15 +3,39 @@
 
 	.button {
 		border-radius: 0;
+	}
 
-		&:first-child {
-			border-top-left-radius: var(--border-radius-button);
-			border-bottom-left-radius: var(--border-radius-button);
+	&:not(.button-group--vertical) {
+
+		.button {
+
+			&:first-child {
+				border-top-left-radius: var(--border-radius-button);
+				border-bottom-left-radius: var(--border-radius-button);
+			}
+
+			&:last-child {
+				border-top-right-radius: var(--border-radius-button);
+				border-bottom-right-radius: var(--border-radius-button);
+			}
 		}
 
-		&:last-child {
-			border-top-right-radius: var(--border-radius-button);
-			border-bottom-right-radius: var(--border-radius-button);
+	}
+
+	&--vertical {
+		flex-direction: column;
+
+		.button {
+
+			&:first-child {
+				border-top-left-radius: var(--border-radius-button);
+				border-top-right-radius: var(--border-radius-button);
+			}
+
+			&:last-child {
+				border-bottom-left-radius: var(--border-radius-button);
+				border-bottom-right-radius: var(--border-radius-button);
+			}
 		}
 	}
 }
