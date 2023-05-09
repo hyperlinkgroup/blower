@@ -1,0 +1,156 @@
+@use '../functions' as fn;
+
+/// Margins
+.m-0 {
+	margin: 0;
+}
+.m-xs {
+	margin: #{fn.spacing(0.25)};
+}
+.m-sm {
+	margin: #{fn.spacing(0.5)};
+}
+.m-md {
+	margin: #{fn.spacing(1)};
+}
+.m-lg {
+	margin: #{fn.spacing(1.5)};
+}
+.m-xl {
+	margin: #{fn.spacing(2)};
+}
+
+.mt-0 {
+	margin-top: 0;
+}
+.mt-xs {
+	margin-top: #{fn.spacing(0.25)};
+}
+.mt-sm {
+	margin-top: #{fn.spacing(0.5)};
+}
+.mt-md {
+	margin-top: #{fn.spacing(1)};
+}
+.mt-lg {
+	margin-top: #{fn.spacing(1.5)};
+}
+.mt-xl {
+	margin-top: #{fn.spacing(2)};
+}
+
+.mb-0 {
+	margin-bottom: 0;
+}
+.mb-xs {
+	margin-bottom: #{fn.spacing(0.25)};
+}
+.mb-sm {
+	margin-bottom: #{fn.spacing(0.5)};
+}
+.mb-md {
+	margin-bottom: #{fn.spacing(1)};
+}
+.mb-lg {
+	margin-bottom: #{fn.spacing(1.5)};
+}
+.mb-xl {
+	margin-bottom: #{fn.spacing(2)};
+}
+
+.mr-0 {
+	margin-right: 0;
+}
+.mr-xs {
+	margin-right: #{fn.spacing(0.25)};
+}
+.mr-sm {
+	margin-right: #{fn.spacing(0.5)};
+}
+.mr-md {
+	margin-right: #{fn.spacing(1)};
+}
+.mr-lg {
+	margin-right: #{fn.spacing(1.5)};
+}
+.mr-xl {
+	margin-right: #{fn.spacing(2)};
+}
+
+.ml-0 {
+	margin-left: 0;
+}
+.ml-xs {
+	margin-left: #{fn.spacing(0.25)};
+}
+.ml-sm {
+	margin-left: #{fn.spacing(0.5)};
+}
+.ml-md {
+	margin-left: #{fn.spacing(1)};
+}
+.ml-lg {
+	margin-left: #{fn.spacing(1.5)};
+}
+.ml-xl {
+	margin-left: #{fn.spacing(2)};
+}
+
+.m-inline-0 {
+	margin-inline: 0;
+}
+.m-inline-xs {
+	margin-inline: #{fn.spacing(0.25)};
+}
+.m-inline-sm {
+	margin-inline: #{fn.spacing(0.5)};
+}
+.m-inline-md {
+	margin-inline: #{fn.spacing(1)};
+}
+.m-inline-lg {
+	margin-inline: #{fn.spacing(1.5)};
+}
+.m-inline-xl {
+	margin-inline: #{fn.spacing(2)};
+}
+
+.m-block-0 {
+	margin-block: 0;
+}
+.m-block-xs {
+	margin-block: #{fn.spacing(0.25)};
+}
+.m-block-sm {
+	margin-block: #{fn.spacing(0.5)};
+}
+.m-block-md {
+	margin-block: #{fn.spacing(1)};
+}
+.m-block-lg {
+	margin-block: #{fn.spacing(1.5)};
+}
+.m-block-xl {
+	margin-block: #{fn.spacing(2)};
+}
+
+
+/// Gaps
+.gap-0 {
+	gap: 0;
+}
+.gap-xs {
+	gap: #{fn.spacing(0.25)};
+}
+.gap-sm {
+	gap: #{fn.spacing(0.5)};
+}
+.gap-md {
+	gap: #{fn.spacing(1)};
+}
+.gap-lg {
+	gap: #{fn.spacing(1.5)};
+}
+.gap-xl {
+	gap: #{fn.spacing(2)};
+}
