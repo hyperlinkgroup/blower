@@ -7,7 +7,7 @@
 .dropdown {
 	--spacing-item-horizontal: #{fn.spacing(2)};
 	--spacing-item-vertical: #{fn.spacing()};
-	--spacing-list: #{fn.spacing()};
+	--spacing-list: #{fn.spacing(.75)};
 	--offset-list: #{fn.spacing(0.5)};
 	--min-width-dropdown: 10rem;
 	--color-border: #{color.$gray-300};
@@ -43,22 +43,43 @@
 	&__item {
 		--color-text-item: currentColor;
 		--color-background-item-hover: #{color.$gray-100};
+		--color-background-item-active: #{color.$gray-500};
 
 		display: block;
 		padding: var(--spacing-item-vertical) var(--spacing-item-horizontal);
 		text-decoration: none;
 		color: var(--color-text-item);
-		transition: background-color transition.$speed-fast;
+		transition-property: background-color, color;
+		transition-duration: transition.$speed-fast;
 		white-space: nowrap;
 		word-break: keep-all;
 
-		&:hover {
+		&:is(:hover, :focus-visible) {
 			background-color: var(--color-background-item-hover);
+		}
+
+		&:is(:active, .is-active) {
+			background-color: var(--color-background-item-active);
+			color: #FFF;
+			transition-duration: initial;
+		}
+
+		&.is-primary {
+			font-weight: 600;
+			--color-text-item: #{color.$primary};
+			--color-background-item-hover: #{color.$primary-lighter};
+			--color-background-item-active: #{color.$primary};
 		}
 
 		&.is-destructive {
 			--color-text-item: #{color.$danger-600};
 			--color-background-item-hover: #{color.$danger-100};
+			--color-background-item-active: #{color.$danger-500};
+		}
+
+		&.is-disabled {
+			pointer-events: none;
+			opacity: 0.5;
 		}
 	}
 

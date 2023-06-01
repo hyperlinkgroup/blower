@@ -2,7 +2,7 @@
 
 $primary: #4cb286 !default;
 $primary-light: color.mix($primary, #fff, 50%) !default;
-$primary-lighter: color.mix($primary, #fff, 80%) !default;
+$primary-lighter: color.mix($primary, #fff, 20%) !default;
 $primary-dark: color.mix($primary, #000, 50%) !default;
 $primary-darker: color.mix($primary, #000, 30%) !default;
 
