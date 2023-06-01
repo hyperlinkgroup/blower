@@ -1,0 +1,113 @@
+@use '../functions' as fn;
+
+.absolute {
+	position: absolute;
+}
+
+.relative {
+	position: relative;
+}
+
+.fixed {
+	position: fixed;
+}
+
+.sticky {
+	position: sticky;
+	top: 0;
+}
+
+.inset-0 {
+	inset: 0;
+}
+.inset-xs {
+	inset: #{fn.spacing(0.25)};
+}
+.inset-sm {
+	inset: #{fn.spacing(0.5)};
+}
+.inset-md {
+	inset: #{fn.spacing(1)};
+}
+.inset-lg {
+	inset: #{fn.spacing(1.5)};
+}
+.inset-xl {
+	inset: #{fn.spacing(2)};
+}
+
+.top-0 {
+	top: 0;
+}
+.top-xs {
+	top: #{fn.spacing(0.25)};
+}
+.top-sm {
+	top: #{fn.spacing(0.5)};
+}
+.top-md {
+	top: #{fn.spacing(1)};
+}
+.top-lg {
+	top: #{fn.spacing(1.5)};
+}
+.top-xl {
+	top: #{fn.spacing(2)};
+}
+
+.right-0 {
+	right: 0;
+}
+.right-xs {
+	right: #{fn.spacing(0.25)};
+}
+.right-sm {
+	right: #{fn.spacing(0.5)};
+}
+.right-md {
+	right: #{fn.spacing(1)};
+}
+.right-lg {
+	right: #{fn.spacing(1.5)};
+}
+.right-xl {
+	right: #{fn.spacing(2)};
+}
+
+.bottom-0 {
+	bottom: 0;
+}
+.bottom-xs {
+	bottom: #{fn.spacing(0.25)};
+}
+.bottom-sm {
+	bottom: #{fn.spacing(0.5)};
+}
+.bottom-md {
+	bottom: #{fn.spacing(1)};
+}
+.bottom-lg {
+	bottom: #{fn.spacing(1.5)};
+}
+.bottom-xl {
+	bottom: #{fn.spacing(2)};
+}
+
+.left-0 {
+	left: 0;
+}
+.left-xs {
+	left: #{fn.spacing(0.25)};
+}
+.left-sm {
+	left: #{fn.spacing(0.5)};
+}
+.left-md {
+	left: #{fn.spacing(1)};
+}
+.left-lg {
+	left: #{fn.spacing(1.5)};
+}
+.left-xl {
+	left: #{fn.spacing(2)};
+}
