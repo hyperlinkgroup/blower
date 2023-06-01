@@ -1,3 +1,4 @@
+@use '../variables/base';
 @use '../variables/color';
 @use '../variables/transition';
 
@@ -14,7 +15,7 @@
 	--color-button-text-active: #FFF;
 	--color-button-border-active: #{color.$primary-darker};
 	--spacing-button: #{fn.spacing()} #{fn.spacing(2)};
-	--border-radius-button: 4px;
+	--border-radius-button: #{base.$corner-radius};
 	--border-width-button: 1px;
 	--font-size-button: 1rem;
 	--font-weight-button: 600;

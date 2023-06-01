@@ -1,0 +1,63 @@
+@use '../variables/base';
+@use '../variables/color';
+@use '../variables/transition';
+
+@use '../functions' as fn;
+
+.dropdown {
+	--spacing-item-horizontal: #{fn.spacing(2)};
+	--spacing-item-vertical: #{fn.spacing()};
+	--spacing-list: #{fn.spacing(0.5)};
+	--min-width-dropdown: 10rem;
+	--color-border: #{color.$gray-300};
+	--width-border: 1px;
+	--border-radius-dropdown: #{base.$corner-radius};
+
+	position: relative;
+
+	&__button::after {
+		content: '';
+		display: inline-block;
+		margin-inline-start: 0.3em;
+		border-block-start: 0.3em solid;
+		border-inline: 0.3em solid transparent;
+		border-block-end: 0;
+	}
+
+	&__list {
+		position: absolute;
+		background-color: #FFF;
+		border: var(--width-border) solid var(--color-border);
+		display: flex;
+		flex-direction: column;
+		list-style-type: none;
+		min-width: var(--min-width-dropdown);
+		padding-inline-start: 0;
+		margin-block: 0;
+		padding-block: var(--spacing-item-vertical);
+		border-radius: var(--border-radius-dropdown);
+		transform: translateY(var(--spacing-list));
+	}
+
+	&__item {
+		--color-text-item: currentColor;
+		--color-background-item-hover: #{color.$gray-100};
+
+		display: block;
+		padding: var(--spacing-item-vertical) var(--spacing-item-horizontal);
+		text-decoration: none;
+		color: var(--color-text-item);
+		transition: background-color transition.$speed-fast;
+		white-space: nowrap;
+		word-break: keep-all;
+
+		&:hover {
+			background-color: var(--color-background-item-hover);
+		}
+
+		&.is-destructive {
+			--color-text-item: #{color.$danger-600};
+			--color-background-item-hover: #{color.$danger-100};
+		}
+	}
+}
