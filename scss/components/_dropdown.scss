@@ -45,7 +45,7 @@
 		--color-background-item-hover: #{color.$gray-100};
 		--color-background-item-active: #{color.$gray-500};
 
-		display: block;
+		display: flex;
 		padding: var(--spacing-item-vertical) var(--spacing-item-horizontal);
 		text-decoration: none;
 		color: var(--color-text-item);
@@ -81,11 +81,32 @@
 			pointer-events: none;
 			opacity: 0.5;
 		}
+
+		&:has(.is-icon),
+		&.has-icon {
+			align-items: center;
+			gap: .5em;
+		}
 	}
 
 	.is-seperated {
 		border-top: var(--width-border) solid var(--color-border);
 		margin-block-start: var(--spacing-list);
 		padding-block-start: var(--spacing-list);
+	}
+
+	&.has-only-icons {
+		--min-width-dropdown: 0;
+
+		.dropdown__list {
+			width: max-content;
+		}
+	}
+
+	&.has-icons-last {
+
+		.is-icon {
+			margin-inline-start: auto;
+		}
 	}
 }

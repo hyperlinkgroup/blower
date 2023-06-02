@@ -5,7 +5,7 @@
 
 .theme-dashboard {
 	--size-sidebar: 300px;
-	--spacing-segments: #{fn.spacing(2)};
+	--spacing-segments: var(--blw-spacing-md);
 	--area-row-first: 'sidebar header';
 	--area-row-last: 'sidebar footer';
 
