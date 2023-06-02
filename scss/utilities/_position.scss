@@ -1,5 +1,3 @@
-@use '../functions' as fn;
-
 .absolute {
 	position: absolute;
 }
@@ -21,93 +19,93 @@
 	inset: 0;
 }
 .inset-xs {
-	inset: #{fn.spacing(0.25)};
+	inset: var(--blw-spacing-xs);
 }
 .inset-sm {
-	inset: #{fn.spacing(0.5)};
+	inset: var(--blw-spacing-sm);
 }
 .inset-md {
-	inset: #{fn.spacing(1)};
+	inset: var(--blw-spacing-md);
 }
 .inset-lg {
-	inset: #{fn.spacing(1.5)};
+	inset: var(--blw-spacing-lg);
 }
 .inset-xl {
-	inset: #{fn.spacing(2)};
+	inset: var(--blw-spacing-xl);
 }
 
 .top-0 {
 	top: 0;
 }
 .top-xs {
-	top: #{fn.spacing(0.25)};
+	top: var(--blw-spacing-xs);
 }
 .top-sm {
-	top: #{fn.spacing(0.5)};
+	top: var(--blw-spacing-sm);
 }
 .top-md {
-	top: #{fn.spacing(1)};
+	top: var(--blw-spacing-md);
 }
 .top-lg {
-	top: #{fn.spacing(1.5)};
+	top: var(--blw-spacing-lg);
 }
 .top-xl {
-	top: #{fn.spacing(2)};
+	top: var(--blw-spacing-xl);
 }
 
 .right-0 {
 	right: 0;
 }
 .right-xs {
-	right: #{fn.spacing(0.25)};
+	right: var(--blw-spacing-xs);
 }
 .right-sm {
-	right: #{fn.spacing(0.5)};
+	right: var(--blw-spacing-sm);
 }
 .right-md {
-	right: #{fn.spacing(1)};
+	right: var(--blw-spacing-md);
 }
 .right-lg {
-	right: #{fn.spacing(1.5)};
+	right: var(--blw-spacing-lg);
 }
 .right-xl {
-	right: #{fn.spacing(2)};
+	right: var(--blw-spacing-xl);
 }
 
 .bottom-0 {
 	bottom: 0;
 }
 .bottom-xs {
-	bottom: #{fn.spacing(0.25)};
+	bottom: var(--blw-spacing-xs);
 }
 .bottom-sm {
-	bottom: #{fn.spacing(0.5)};
+	bottom: var(--blw-spacing-sm);
 }
 .bottom-md {
-	bottom: #{fn.spacing(1)};
+	bottom: var(--blw-spacing-md);
 }
 .bottom-lg {
-	bottom: #{fn.spacing(1.5)};
+	bottom: var(--blw-spacing-lg);
 }
 .bottom-xl {
-	bottom: #{fn.spacing(2)};
+	bottom: var(--blw-spacing-xl);
 }
 
 .left-0 {
 	left: 0;
 }
 .left-xs {
-	left: #{fn.spacing(0.25)};
+	left: var(--blw-spacing-xs);
 }
 .left-sm {
-	left: #{fn.spacing(0.5)};
+	left: var(--blw-spacing-sm);
 }
 .left-md {
-	left: #{fn.spacing(1)};
+	left: var(--blw-spacing-md);
 }
 .left-lg {
-	left: #{fn.spacing(1.5)};
+	left: var(--blw-spacing-lg);
 }
 .left-xl {
-	left: #{fn.spacing(2)};
+	left: var(--blw-spacing-xl);
 }

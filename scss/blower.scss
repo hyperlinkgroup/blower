@@ -1,4 +1,6 @@
 @layer blower {
+	@import 'global-custom-properties';
+
 	@layer reset, base, layout, components, utilities;
 
 	@layer reset { @import 'reset'; }
