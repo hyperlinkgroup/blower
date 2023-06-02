@@ -13,6 +13,7 @@
 	--color-border: #{color.$gray-300};
 	--width-border: 1px;
 	--border-radius-dropdown: #{base.$corner-radius};
+	--base-transform: translateY(var(--offset-list));
 
 	position: relative;
 
@@ -37,7 +38,7 @@
 		margin-block: 0;
 		padding-block: var(--spacing-list);
 		border-radius: var(--border-radius-dropdown);
-		transform: translateY(var(--offset-list));
+		transform: var(--base-transform);
 	}
 
 	&__item {
@@ -107,6 +108,36 @@
 
 		.is-icon {
 			margin-inline-start: auto;
+		}
+	}
+
+	&--start {
+
+		.dropdown__list {
+			left: 0;
+		}
+	}
+
+	&--center {
+
+		.dropdown__button {
+			margin-inline: auto;
+		}
+
+		.dropdown__list {
+			left: 50%;
+			transform: translateX(-50%) var(--base-transform);
+		}
+	}
+
+	&--end {
+
+		.dropdown__button {
+			margin-inline-start: auto;
+		}
+
+		.dropdown__list {
+			right: 0;
 		}
 	}
 }
