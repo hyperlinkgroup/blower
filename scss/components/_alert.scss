@@ -20,6 +20,15 @@
 	text-decoration: none;
 	border: var(--border-width-alert) solid var(--color-alert-border);
 
+	a {
+		color: var(--color-alert-text);
+		text-decoration: underline;
+
+		&:hover {
+			text-decoration: none;
+		}
+	}
+
 	&--success {
 		--color-alert-background: #{color.$positive-200};
 		--color-alert-text: #{color.$positive-900};
