@@ -13,6 +13,18 @@
 .inline-flex {
 	display: inline-flex;
 }
+.flex-column {
+	flex-direction: column;
+}
+.flex-reverse {
+	flex-direction: row-reverse;
+}
+.flex-column-reverse {
+	flex-direction: column-reverse;
+}
+.flex-wrap {
+	flex-wrap: wrap;
+}
 .grid {
 	display: grid;
 }

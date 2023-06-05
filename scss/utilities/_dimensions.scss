@@ -8,13 +8,31 @@
 	width: 2.5rem;
 }
 .width-md {
-	width: 5rem;
-}
-.width-lg {
 	width: 10rem;
 }
+.width-lg {
+	width: 25rem;
+}
 .width-xl {
-	width: 20rem;
+	width: 50rem;
+}
+.width-25 {
+	width: 25%;
+}
+.width-50 {
+	width: 50%;
+}
+.width-75 {
+	width: 75%;
+}
+.width-100 {
+	width: 100%;
+}
+.max-content {
+	width: max-content;
+}
+.min-content {
+	width: min-content;
 }
 
 .height-0 {
