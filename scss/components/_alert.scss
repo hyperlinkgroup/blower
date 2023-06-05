@@ -1,0 +1,22 @@
+@use '../variables/base';
+@use '../variables/color';
+
+@use '../functions' as fn;
+
+.alert {
+	--color-alert-background: #{color.$primary};
+	--color-alert-text: #{color.$primary-50};
+	--color-alert-border: #{color.$primary-600};
+	--spacing-alert: #{fn.spacing(1.5)};
+	--border-radius-alert: #{base.$corner-radius};
+	--border-width-alert: 1px;
+	--font-size-alert: 1rem;
+
+	padding: var(--spacing-alert);
+	border-radius: var(--border-radius-alert);
+	background-color: var(--color-alert-background);
+	color: var(--color-alert-text);
+	font-size: var(--font-size-alert);
+	text-decoration: none;
+	border: var(--border-width-alert) solid var(--color-alert-border);
+}
