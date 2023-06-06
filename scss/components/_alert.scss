@@ -1,5 +1,6 @@
 @use '../variables/base';
 @use '../variables/color';
+@use '../variables/transition';
 
 @use '../functions' as fn;
 
@@ -12,6 +13,7 @@
 	--border-width-alert: 1px;
 	--font-size-alert: 1rem;
 
+	position: relative;
 	padding: var(--spacing-alert);
 	border-radius: var(--border-radius-alert);
 	background-color: var(--color-alert-background);
@@ -27,6 +29,56 @@
 		&:hover {
 			text-decoration: none;
 		}
+	}
+
+	hr {
+		margin: var(--spacing-alert) 0;
+		border: 0;
+		border-top: var(--border-width-alert) solid var(--color-alert-border);
+	}
+
+	ul, ol {
+		padding-inline-start: 2.5ch;
+	}
+
+	& > * {
+		margin: 0;
+
+		& + * {
+			margin-top: var(--spacing-alert);
+		}
+	}
+
+	&__close {
+		position: absolute;
+		top: calc(var(--spacing-alert) / 3);
+		right: calc(var(--spacing-alert) / 3);
+		background-color: transparent;
+		border: 0;
+		padding: calc(var(--spacing-alert) / 1.5);
+		color: var(--color-alert-text);
+		transition: background-color #{transition.$speed-fast};
+		margin: 0;
+		border-radius: 50%;
+		line-height: 1;
+
+		&:hover {
+			background-color: var(--color-alert-border);
+		}
+
+		&:active {
+			background-color: var(--color-alert-text);
+			color: var(--color-alert-background);
+		}
+
+		svg {
+			width: 1em;
+			height: 1em;
+		}
+	}
+
+	&:is(:has(.alert__close), .is-dismissible) > :first-child {
+		margin-inline-end: calc(var(--spacing-alert) * 2);
 	}
 
 	&--success {
@@ -55,7 +107,7 @@
 	}
 
 	&--dark {
-		--color-alert-background: #{color.$gray-800};
+		--color-alert-background: #{color.$gray-700};
 		--color-alert-text: #FFF;
 		--color-alert-border: #{color.$gray-900};
 	}
@@ -65,5 +117,4 @@
 		--color-alert-text: #{color.$gray-900};
 		--color-alert-border: #{color.$gray-100};
 	}
-
 }
