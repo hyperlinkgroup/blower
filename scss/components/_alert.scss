@@ -77,8 +77,12 @@
 		}
 	}
 
-	&:is(:has(.alert__close), .is-dismissible) > :first-child {
+	&:is(:has(.alert__close):not(:only-child), .is-dismissible) > :first-child {
 		margin-inline-end: calc(var(--spacing-alert) * 2);
+	}
+
+	&:is(:has(.alert__close):only-child, .is-dismissible) {
+		padding-inline-end: calc(var(--spacing-alert) * 3.5);
 	}
 
 	&--success {
