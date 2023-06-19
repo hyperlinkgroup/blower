@@ -14,7 +14,7 @@
 	--color-button-background-active: #{color.$primary-darker};
 	--color-button-text-active: #FFF;
 	--color-button-border-active: #{color.$primary-darker};
-	--spacing-button: #{fn.spacing()} #{fn.spacing(2)};
+	--spacing-button: #{fn.spacing()} var(--blw-spacing-md);
 	--border-radius-button: #{base.$corner-radius};
 	--border-width-button: 1px;
 	--font-size-button: 1rem;

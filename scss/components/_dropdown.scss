@@ -8,7 +8,7 @@
 	--spacing-item-horizontal: #{fn.spacing(1.25)};
 	--spacing-item-vertical: #{fn.spacing()};
 	--spacing-list: #{fn.spacing(.75)};
-	--offset-list: #{fn.spacing(0.5)};
+	--offset-list: var(--blw-spacing-sm);
 	--min-width-dropdown: 10rem;
 	--color-border: #{color.$gray-300};
 	--width-border: 1px;
