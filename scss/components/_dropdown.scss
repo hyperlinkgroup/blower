@@ -5,7 +5,7 @@
 @use '../functions' as fn;
 
 .dropdown {
-	--spacing-item-horizontal: #{fn.spacing(2)};
+	--spacing-item-horizontal: #{fn.spacing(1.25)};
 	--spacing-item-vertical: #{fn.spacing()};
 	--spacing-list: #{fn.spacing(.75)};
 	--offset-list: #{fn.spacing(0.5)};
@@ -54,6 +54,8 @@
 		transition-duration: transition.$speed-fast;
 		white-space: nowrap;
 		word-break: keep-all;
+		margin-inline: var(--spacing-list);
+		border-radius: calc(var(--border-radius-dropdown) / 1.5);
 
 		&:is(:hover, :focus-visible) {
 			background-color: var(--color-background-item-hover);
