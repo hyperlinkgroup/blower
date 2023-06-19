@@ -26,6 +26,31 @@
 	align-items: stretch;
 }
 
+.justify-center {
+	justify-content: center;
+}
+.justify-start {
+	justify-content: start;
+}
+.justify-end {
+	justify-content: end;
+}
+.justify-flex-start {
+	justify-content: flex-start;
+}
+.justify-flex-end {
+	justify-content: flex-end;
+}
+.justify-space-between {
+	justify-content: space-between;
+}
+.justify-space-around {
+	justify-content: space-around;
+}
+.justify-space-evenly {
+	justify-content: space-evenly;
+}
+
 .text-center {
 	text-align: center;
 }

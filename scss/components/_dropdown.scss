@@ -39,6 +39,10 @@
 		padding-block: var(--spacing-list);
 		border-radius: var(--border-radius-dropdown);
 		transform: var(--base-transform);
+
+		> li {
+			padding-inline: var(--spacing-list);
+		}
 	}
 
 	&__item {
@@ -47,6 +51,9 @@
 		--color-background-item-active: #{color.$gray-500};
 
 		display: flex;
+		width: 100%;
+		border: 0;
+		background-color: transparent;
 		padding: var(--spacing-item-vertical) var(--spacing-item-horizontal);
 		text-decoration: none;
 		color: var(--color-text-item);
@@ -54,7 +61,6 @@
 		transition-duration: transition.$speed-fast;
 		white-space: nowrap;
 		word-break: keep-all;
-		margin-inline: var(--spacing-list);
 		border-radius: calc(var(--border-radius-dropdown) / 1.5);
 
 		&:is(:hover, :focus-visible) {
