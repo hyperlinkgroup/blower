@@ -80,6 +80,12 @@
 		}
 	}
 
+	&--primary {
+		--background-color-card: #{color.$primary};
+		--color-card-text: #{color.$primary-50};
+		--color-card-border: #{color.$primary-600};
+	}
+
 	&--success {
 		--background-color-card: #{color.$positive-200};
 		--color-card-text: #{color.$positive-900};
