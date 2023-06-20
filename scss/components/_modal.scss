@@ -1,0 +1,49 @@
+@use '../variables/base';
+@use '../variables/color';
+@use '../variables/font';
+
+@use '../functions' as fn;
+
+.modal {
+	--max-width-modal: 500px;
+	--color-backdrop-modal: rgba(0, 0, 0, .4);
+	--border-radius-modal: #{base.$corner-radius};
+	--box-shadow-modal: #{base.$shadow-elevated};
+	--inner-spacing-modal: var(--blw-spacing-md);
+	--backdrop-blur-modal: 6px;
+
+	position: fixed;
+	inset: 0;
+	background-color: var(--color-backdrop-modal);
+	display: grid;
+	place-items: center;
+
+	&__content {
+		background-color: #fff;
+		width: 100%;
+		max-width: var(--max-width-modal);
+		border-radius: var(--border-radius-modal);
+		box-shadow: var(--box-shadow-modal);
+
+		> * {
+			padding: var(--inner-spacing-modal);
+
+			&:not(:last-child) {
+				border-bottom: 1px solid color.$gray-200;
+			}
+		}
+	}
+
+	&__header {
+
+	}
+
+	&__title {
+		margin: 0;
+		font-size: font.$headline-xs;
+	}
+
+	&.has-blurred-backdrop {
+		backdrop-filter: blur(var(--backdrop-blur-modal));
+	}
+}

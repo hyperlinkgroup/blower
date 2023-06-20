@@ -1,3 +1,6 @@
 $spacer: .5rem !default; // 8px
 
 $corner-radius: 4px !default;
+
+$shadow: 0 4px 8px 0 rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .1) !default;
+$shadow-elevated: 0 8px 16px 0 rgba(0, 0, 0, .2), 0 0 0 1px rgba(0, 0, 0, .05) !default;
