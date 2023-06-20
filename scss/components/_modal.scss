@@ -19,12 +19,14 @@
 	--font-weight-header-modal: 600;
 	--background-footer-modal: var(--background-header-modal);
 	--spacing-close-button-modal: #{fn.spacing()};
+	--model-position: center;
 
 	position: fixed;
 	inset: 0;
 	background-color: var(--color-backdrop-modal);
 	display: grid;
-	place-items: center;
+	place-items: var(--model-position);
+	padding: var(--inner-spacing-modal);
 
 	&[aria-hidden="true"] {
 		display: none;
@@ -33,9 +35,10 @@
 	&__content {
 		display: flex;
 		flex-direction: column;
-		background-color: #fff;
 		width: 100%;
 		max-width: var(--max-width-modal);
+		margin-inline: auto;
+		background-color: #fff;
 		border-radius: var(--border-radius-modal);
 		box-shadow: var(--box-shadow-modal);
 		@include mx.viewport-height(95, 'max');
@@ -107,6 +110,14 @@
 
 	&.has-blurred-backdrop {
 		backdrop-filter: blur(var(--backdrop-blur-modal));
+	}
+
+	&:is(.is-start, .is-top) {
+		--model-position: start;
+	}
+
+	&:is(.is-end, .is-bottom) {
+		--model-position: end;
 	}
 
 	&.is-dialog {
