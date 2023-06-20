@@ -1,3 +1,5 @@
+@use 'variables/font';
+
 @use 'functions' as fn;
 
 :root {
@@ -6,4 +8,16 @@
 	--blw-spacing-md: #{fn.spacing(2)};
 	--blw-spacing-lg: #{fn.spacing(3.5)};
 	--blw-spacing-xl: #{fn.spacing(5)};
+
+	--blw-text-size-xs: #{font.$text-xs};
+	--blw-text-size-sm: #{font.$text-sm};
+	--blw-text-size-md: #{font.$text-md};
+	--blw-text-size-lg: #{font.$text-lg};
+	--blw-text-size-xl: #{font.$text-xl};
+
+	--blw-headline-size-xs: #{font.$headline-xs};
+	--blw-headline-size-sm: #{font.$headline-sm};
+	--blw-headline-size-md: #{font.$headline-md};
+	--blw-headline-size-lg: #{font.$headline-lg};
+	--blw-headline-size-xl: #{font.$headline-xl};
 }
