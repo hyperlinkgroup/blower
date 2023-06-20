@@ -79,4 +79,40 @@
 			}
 		}
 	}
+
+	&--success {
+		--background-color-card: #{color.$positive-200};
+		--color-card: #{color.$positive-900};
+		--color-border-card: #{color.$positive-300};
+	}
+
+	&--danger {
+		--background-color-card: #{color.$danger-200};
+		--color-card: #{color.$danger-900};
+		--color-border-card: #{color.$danger-300};
+	}
+
+	&--warning {
+		--background-color-card: #{color.$warning-200};
+		--color-card: #{color.$warning-900};
+		--color-border-card: #{color.$warning-300};
+	}
+
+	&--info {
+		--background-color-card: #{color.$gray-200};
+		--color-card: #{color.$gray-900};
+		--color-border-card: #{color.$gray-300};
+	}
+
+	&--dark {
+		--background-color-card: #{color.$gray-700};
+		--color-card: #FFF;
+		--color-border-card: #{color.$gray-900};
+	}
+
+	&--light {
+		--background-color-card: #{color.$gray-100};
+		--color-card: #{color.$gray-900};
+		--color-border-card: #{color.$gray-200};
+	}
 }
