@@ -63,3 +63,20 @@
 .text-justify {
 	text-align: justify;
 }
+
+.pull-left {
+	float: left;
+
+	.flow & {
+		margin-inline-end: 1em;
+		margin-block-end: .5em;
+	}
+}
+.pull-right {
+	float: right;
+
+	.flow & {
+		margin-inline-start: 1em;
+		margin-block-end: .5em;
+	}
+}

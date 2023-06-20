@@ -1,4 +1,8 @@
+/**
+ * This utility class helps you to get your normal flow content right.
+ */
 .flow {
+	line-height: 1.5;
 
 	& > * {
 		margin-block: 0;
@@ -6,5 +10,29 @@
 		& + * {
 			margin-top: 1em;
 		}
+	}
+
+	ul, ol {
+		padding-inline-start: 2.5ch;
+	}
+
+	h1 {
+		font-size: var(--blw-headline-size-xl);
+	}
+	h2 {
+		font-size: var(--blw-headline-size-lg);
+	}
+	h3 {
+		font-size: var(--blw-headline-size-md);
+	}
+	h4 {
+		font-size: var(--blw-headline-size-sm);
+	}
+	h5 {
+		font-size: var(--blw-headline-size-xs);
+	}
+
+	figure {
+		margin-inline: 0;
 	}
 }
