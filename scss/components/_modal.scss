@@ -1,22 +1,33 @@
 @use '../variables/base';
 @use '../variables/color';
 @use '../variables/font';
+@use '../variables/transition';
 
 @use '../functions' as fn;
 
 .modal {
-	--max-width-modal: 500px;
+	--max-width-modal: 800px;
 	--color-backdrop-modal: rgba(0, 0, 0, .4);
 	--border-radius-modal: #{base.$corner-radius};
 	--box-shadow-modal: #{base.$shadow-elevated};
 	--inner-spacing-modal: var(--blw-spacing-md);
 	--backdrop-blur-modal: 6px;
+	--background-header-modal: #{color.$gray-100};
+	--color-header-modal: #{color.$gray-900};
+	--font-size-header-modal: var(--blw-headline-size-xs);
+	--font-weight-header-modal: 600;
+	--background-footer-modal: var(--background-header-modal);
+	--spacing-close-button-modal: #{fn.spacing()};
 
 	position: fixed;
 	inset: 0;
 	background-color: var(--color-backdrop-modal);
 	display: grid;
 	place-items: center;
+
+	&[aria-hidden="true"] {
+		display: none;
+	}
 
 	&__content {
 		background-color: #fff;
@@ -35,15 +46,65 @@
 	}
 
 	&__header {
+		background-color: var(--background-header-modal);
+		border-radius: var(--border-radius-modal) var(--border-radius-modal) 0 0;
+		display: flex;
+		align-items: center;
+		gap: var(--blw-spacing-sm);
+		color: var(--color-header-modal);
+	}
 
+	&__close {
+		background-color: transparent;
+		border: 0;
+		color: currentColor;
+		transition: background-color #{transition.$speed-fast};
+		padding: var(--spacing-close-button-modal);
+		margin: calc(-1 * var(--spacing-close-button-modal));
+		border-radius: 50%;
+		line-height: 0;
+		margin-inline-start: auto;
+
+		&:hover {
+			background-color: rgba(0, 0, 0, .1);
+		}
+
+		&:active {
+			background-color: var(--color-alert-text);
+			color: var(--color-alert-background);
+		}
+
+		svg {
+			width: 1em;
+			height: 1em;
+		}
 	}
 
 	&__title {
 		margin: 0;
-		font-size: font.$headline-xs;
+		font-size: var(--font-size-header-modal);
+	}
+
+	&__body {
+	}
+
+	&__footer {
+		background-color: var(--background-footer-modal);
+		border-radius: 0 0 var(--border-radius-modal) var(--border-radius-modal);
+		display: flex;
+		gap: var(--blw-spacing-sm);
+		justify-content: flex-end;
+
+		&:has(.button:only-child) {
+			justify-content: center;
+		}
 	}
 
 	&.has-blurred-backdrop {
 		backdrop-filter: blur(var(--backdrop-blur-modal));
+	}
+
+	&.is-dialog {
+		--max-width-modal: 500px;
 	}
 }
