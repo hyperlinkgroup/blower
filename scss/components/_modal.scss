@@ -4,6 +4,7 @@
 @use '../variables/transition';
 
 @use '../functions' as fn;
+@use '../mixins' as mx;
 
 .modal {
 	--max-width-modal: 800px;
@@ -30,11 +31,14 @@
 	}
 
 	&__content {
+		display: flex;
+		flex-direction: column;
 		background-color: #fff;
 		width: 100%;
 		max-width: var(--max-width-modal);
 		border-radius: var(--border-radius-modal);
 		box-shadow: var(--box-shadow-modal);
+		@include mx.viewport-height(95, 'max');
 
 		> * {
 			padding: var(--inner-spacing-modal);
@@ -86,6 +90,7 @@
 	}
 
 	&__body {
+		overflow: auto;
 	}
 
 	&__footer {
