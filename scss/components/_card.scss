@@ -5,7 +5,7 @@
 @use '../functions' as fn;
 
 .card {
-	--color-border-card: #{color.$gray-300};
+	--color-card-border: #{color.$gray-300};
 	--spacing-card: #{fn.spacing(1.5)};
 	--gap-card: var(--spacing-card);
 	--border-radius-card: calc(#{base.$corner-radius} * 2);
@@ -16,16 +16,16 @@
 	--font-size-card-subtitle: var(--blw-text-size-lg);
 	--background-color-card: #FFF;
 	--background-image-card: #{color.$gray-100};
-	--color-card: #{color.$text-dark};
+	--color-card-text: #{color.$text-dark};
 
 	position: relative;
 	padding: var(--spacing-card);
 	border-radius: var(--border-radius-card);
 	background-color: var(--background-color-card);
-	color: var(--color-card);
+	color: var(--color-card-text);
 	font-size: var(--font-size-card);
 	text-decoration: none;
-	border: var(--border-width-card) solid var(--color-border-card);
+	border: var(--border-width-card) solid var(--color-card-border);
 	display: flex;
 	flex-direction: column;
 	gap: var(--gap-card);
@@ -82,37 +82,37 @@
 
 	&--success {
 		--background-color-card: #{color.$positive-200};
-		--color-card: #{color.$positive-900};
-		--color-border-card: #{color.$positive-300};
+		--color-card-text: #{color.$positive-900};
+		--color-card-border: #{color.$positive-300};
 	}
 
 	&--danger {
 		--background-color-card: #{color.$danger-200};
-		--color-card: #{color.$danger-900};
-		--color-border-card: #{color.$danger-300};
+		--color-card-text: #{color.$danger-900};
+		--color-card-border: #{color.$danger-300};
 	}
 
 	&--warning {
 		--background-color-card: #{color.$warning-200};
-		--color-card: #{color.$warning-900};
-		--color-border-card: #{color.$warning-300};
+		--color-card-text: #{color.$warning-900};
+		--color-card-border: #{color.$warning-300};
 	}
 
 	&--info {
 		--background-color-card: #{color.$gray-200};
-		--color-card: #{color.$gray-900};
-		--color-border-card: #{color.$gray-300};
+		--color-card-text: #{color.$gray-900};
+		--color-card-border: #{color.$gray-300};
 	}
 
 	&--dark {
 		--background-color-card: #{color.$gray-700};
-		--color-card: #FFF;
-		--color-border-card: #{color.$gray-900};
+		--color-card-text: #FFF;
+		--color-card-border: #{color.$gray-900};
 	}
 
 	&--light {
 		--background-color-card: #{color.$gray-100};
-		--color-card: #{color.$gray-900};
-		--color-border-card: #{color.$gray-200};
+		--color-card-text: #{color.$gray-900};
+		--color-card-border: #{color.$gray-200};
 	}
 }

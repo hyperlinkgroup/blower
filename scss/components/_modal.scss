@@ -13,19 +13,18 @@
 	--box-shadow-modal: #{base.$shadow-elevated};
 	--inner-spacing-modal: var(--blw-spacing-md);
 	--backdrop-blur-modal: 6px;
-	--background-header-modal: #{color.$gray-100};
-	--color-header-modal: #{color.$gray-900};
-	--font-size-header-modal: var(--blw-headline-size-xs);
-	--font-weight-header-modal: 600;
-	--background-footer-modal: var(--background-header-modal);
-	--spacing-close-button-modal: #{fn.spacing()};
-	--model-position: center;
+	--background-modal-header: #{color.$gray-100};
+	--color-modal-header: #{color.$gray-900};
+	--font-size-modal-header: var(--blw-headline-size-xs);
+	--background-modal-footer: var(--background-modal-header);
+	--spacing-modal-close-button: #{fn.spacing()};
+	--position-modal: center;
 
 	position: fixed;
 	inset: 0;
 	background-color: var(--color-backdrop-modal);
 	display: grid;
-	place-items: var(--model-position);
+	place-items: var(--position-modal);
 	padding: var(--inner-spacing-modal);
 
 	&[aria-hidden="true"] {
@@ -53,12 +52,12 @@
 	}
 
 	&__header {
-		background-color: var(--background-header-modal);
+		background-color: var(--background-modal-header);
 		border-radius: var(--border-radius-modal) var(--border-radius-modal) 0 0;
 		display: flex;
 		align-items: center;
 		gap: var(--blw-spacing-sm);
-		color: var(--color-header-modal);
+		color: var(--color-modal-header);
 	}
 
 	&__close {
@@ -66,8 +65,8 @@
 		border: 0;
 		color: currentColor;
 		transition: background-color #{transition.$speed-fast};
-		padding: var(--spacing-close-button-modal);
-		margin: calc(-1 * var(--spacing-close-button-modal));
+		padding: var(--spacing-modal-close-button);
+		margin: calc(-1 * var(--spacing-modal-close-button));
 		border-radius: 50%;
 		line-height: 0;
 		margin-inline-start: auto;
@@ -89,7 +88,7 @@
 
 	&__title {
 		margin: 0;
-		font-size: var(--font-size-header-modal);
+		font-size: var(--font-size-modal-header);
 	}
 
 	&__body {
@@ -97,7 +96,7 @@
 	}
 
 	&__footer {
-		background-color: var(--background-footer-modal);
+		background-color: var(--background-modal-footer);
 		border-radius: 0 0 var(--border-radius-modal) var(--border-radius-modal);
 		display: flex;
 		gap: var(--blw-spacing-sm);
@@ -113,11 +112,11 @@
 	}
 
 	&:is(.is-start, .is-top) {
-		--model-position: start;
+		--position-modal: start;
 	}
 
 	&:is(.is-end, .is-bottom) {
-		--model-position: end;
+		--position-modal: end;
 	}
 
 	&.is-dialog {
