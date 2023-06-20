@@ -54,9 +54,9 @@
 	&--primary {}
 
 	&--secondary {
-		--color-button-background: #{color.$gray-100};
+		--color-button-background: #{color.$gray-200};
 		--color-button-text: #{color.$gray-900};
-		--color-button-border: #{color.$gray-100};
+		--color-button-border: #{color.$gray-200};
 		--color-button-background-hover: #{color.$gray-500};
 		--color-button-text-hover: #FFF;
 		--color-button-border-hover: #{color.$gray-500};
