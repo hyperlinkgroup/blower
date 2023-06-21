@@ -868,7 +868,6 @@
            appearance: none;
       width: var(--size-input);
       height: var(--size-input);
-      border-radius: 4px;
       display: grid;
       place-content: center;
       outline: calc(var(--border-width-input)) solid transparent;
