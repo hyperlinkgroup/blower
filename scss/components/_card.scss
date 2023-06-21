@@ -14,6 +14,7 @@
 	--font-size-card: var(--blw-text-size-md);
 	--font-size-card-title: var(--blw-headline-size-xs);;
 	--font-size-card-subtitle: var(--blw-text-size-lg);
+	--font-size-card-meta: var(--blw-text-size-xs);
 	--background-color-card: #FFF;
 	--background-image-card: #{color.$gray-100};
 	--color-card-text: #{color.$text-dark};
@@ -51,6 +52,27 @@
 		border-radius: var(--border-radius-card-image);
 		width: 100%;
 		height: auto;
+	}
+
+	&__body {}
+
+	&__footer {
+		display: flex;
+		gap: var(--gap-card);
+	}
+
+	&__meta {
+		font-size: var(--font-size-card-meta);
+		opacity: 0.7;
+
+		a {
+			color: currentColor;
+			text-decoration: none;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
 	}
 
 	&.has-edge-image {
