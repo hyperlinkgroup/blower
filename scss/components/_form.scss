@@ -130,13 +130,19 @@
 
 			&::before {
 				content: '';
-				width: calc(var(--size-input) * .6);
-				height: calc(var(--size-input) * .6);
+				width: calc(var(--size-input) * .5);
+				height: calc(var(--size-input) * .5);
 				clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 				transform: scale(0);
 				transform-origin: center;
 				transition: transition.$speed-instant transform ease-in-out;
+				transition-property: transform, filter;
 				background-color: var(--color-checked);
+			}
+
+			&:hover::before {
+				transform: scale(.5);
+				filter: brightness(1.3);
 			}
 
 			&:checked::before {
@@ -153,8 +159,6 @@
 			border-radius: 50%;
 
 			&::before {
-				width: calc(var(--size-input) * .5);
-				height: calc(var(--size-input) * .5);
 				clip-path: none;
 				border-radius: inherit;
 			}
