@@ -1,0 +1,5 @@
+@use 'position' as position;
+
+.has-floating-badge {
+	@extend .relative;
+}

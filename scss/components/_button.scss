@@ -14,14 +14,16 @@
 	--color-button-background-active: #{color.$primary-darker};
 	--color-button-text-active: #FFF;
 	--color-button-border-active: #{color.$primary-darker};
-	--spacing-button: #{fn.spacing()} var(--blw-spacing-md);
+	--spacing-button-horizontal: var(--blw-spacing-md);
+	--spacing-button-vertical: #{fn.spacing()};
 	--border-radius-button: #{base.$corner-radius};
 	--border-width-button: 1px;
 	--font-size-button: 1rem;
 	--font-weight-button: 600;
 
-	padding: var(--spacing-button);
+	padding: var(--spacing-button-vertical) var(--spacing-button-horizontal);
 	display: inline-flex;
+	gap: calc(var(--spacing-button-horizontal) / 2);
 	align-items: center;
 	justify-content: center;
 	border-radius: var(--border-radius-button);
@@ -114,12 +116,14 @@
 	}
 
 	&--small {
-		--spacing-button: #{fn.spacing(.75)} #{fn.spacing(1.5)};
+		--spacing-button-horizontal: #{fn.spacing(1.5)};
+		--spacing-button-vertical: #{fn.spacing(.75)} ;
 		--font-size-button: .75rem;
 	}
 
 	&--large {
-		--spacing-button: #{fn.spacing(1.5)} #{fn.spacing(3)};
+		--spacing-button-horizontal: #{fn.spacing(3)};
+		--spacing-button-vertical: #{fn.spacing(1.5)};
 		--font-size-button: 1.25rem;
 	}
 
