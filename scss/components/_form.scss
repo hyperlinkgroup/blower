@@ -55,6 +55,7 @@
 	}
 
 	&__input {
+		display: block;
 		background-color: var(--color-input-background);
 		border: var(--border-width-input) solid var(--color-input-border);
 		border-radius: var(--border-radius-input);
