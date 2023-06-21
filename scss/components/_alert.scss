@@ -51,8 +51,8 @@
 
 	&__close {
 		position: absolute;
-		top: calc(var(--spacing-alert) / 3);
-		right: calc(var(--spacing-alert) / 3);
+		inset-block-start: calc(var(--spacing-alert) / 3);
+		inset-inline-end: calc(var(--spacing-alert) / 3);
 		background-color: transparent;
 		border: 0;
 		padding: calc(var(--spacing-alert) / 1.5);
