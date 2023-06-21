@@ -16,8 +16,10 @@
 	--color-input-text-disabled: #{color.$gray-500};
 	--spacing-input-horizontal: var(--blw-spacing-md);
 	--spacing-input-vertical: #{fn.spacing()};
+	--spacing-between: #{fn.spacing()};
 	--font-size-input: var(--blw-text-size-md);
 	--font-size-input-label: var(--blw-text-size-sm);
+	--font-size-input-message: var(--blw-text-size-xs);
 	--font-weight-input-label: 600;
 	--border-radius-input: #{base.$corner-radius};
 	--border-width-input: 1px;
@@ -27,7 +29,7 @@
 	&__item {
 
 		& + & {
-			margin-top: #{fn.spacing()};
+			margin-top: var(--spacing-between);
 		}
 
 		&.has-error {
@@ -85,10 +87,44 @@
 	}
 
 	&__label {
+		display: block;
 		color: var(--color-input-text);
 		font-size: var(--font-size-input-label);
 		font-weight: var(--font-weight-input-label);
-		margin-block: 0;
+		margin-block: 0 calc(var(--spacing-between) / 2);
 		margin-inline: 0;
+		line-height: 1.1;
+	}
+
+	&__message {
+		color: var(--color-input-text);
+		font-size: var(--font-size-input-message);
+		line-height: 1.1;
+	}
+
+	&--horizontal {
+		--spacing-between: #{fn.spacing(2)};
+
+		.form__item {
+			display: grid;
+			grid-template-columns: 200px 1fr;
+			gap: calc(var(--spacing-between) / 3) var(--spacing-between);
+		}
+
+		.form__input {
+			align-self: start;
+		}
+
+		.form__label {
+			display: flex;
+			align-items: center;
+			flex: 0 0 200px;
+			margin-block: 0;
+			margin-inline: 0;
+		}
+
+		.form__message {
+			grid-column: 2 / 3;
+		}
 	}
 }
