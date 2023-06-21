@@ -76,6 +76,7 @@
 		}
 
 		&:active {
+			transition: none;
 			background-color: var(--color-alert-text);
 			color: var(--color-alert-background);
 		}

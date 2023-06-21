@@ -17,7 +17,7 @@
 	--font-weight-badge: 600;
 
 	display: flex;
-	gap: calc(var(--spacing-badge-horizontal) / 2);
+	gap: var(--spacing-badge-horizontal);
 	padding: var(--spacing-badge-vertical) var(--spacing-badge-horizontal);
 	border-radius: var(--border-radius-badge);
 	background-color: var(--color-badge-background);
@@ -37,25 +37,31 @@
 		}
 	}
 
+	&__close,
+	&__additional {
+		padding: var(--spacing-badge-vertical) var(--spacing-badge-horizontal);
+		margin-block: calc(var(--spacing-badge-vertical) * -1);
+		margin-inline-end: calc(var(--spacing-badge-horizontal) * -1);
+		border-start-end-radius: calc(var(--border-radius-badge) - var(--border-width-badge));
+		border-end-end-radius: calc(var(--border-radius-badge) - var(--border-width-badge));
+		background-color: var(--color-badge-border);
+	}
+
 	&__close {
 		display: flex;
 		align-items: center;
 		background-color: transparent;
 		border: 0;
-		padding: var(--spacing-badge-vertical) var(--spacing-badge-horizontal);
-		margin-block: calc(var(--spacing-badge-vertical) * -1);
-		margin-inline-end: calc(var(--spacing-badge-horizontal) * -1);
 		color: var(--color-badge-text);
 		transition: background-color #{transition.$speed-fast};
 		line-height: 1;
-		border-start-end-radius: var(--border-radius-badge);
-		border-end-end-radius: var(--border-radius-badge);
 
 		&:hover {
 			background-color: var(--color-badge-background-hover);
 		}
 
 		&:active {
+			transition: none;
 			background-color: var(--color-badge-background);
 		}
 
@@ -63,6 +69,10 @@
 			width: 1em;
 			height: 1em;
 		}
+	}
+
+	&__additional {
+		background-color: var(--color-badge-border);
 	}
 
 	&--primary {
@@ -90,7 +100,7 @@
 	}
 
 	&--dark {
-		--color-badge-background: #{color.$gray-700};
+		--color-badge-background: #{color.$gray-600};
 		--color-badge-background-hover: #{color.$gray-500};
 		--color-badge-text: #FFF;
 		--color-badge-border: #{color.$gray-900};

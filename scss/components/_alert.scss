@@ -67,6 +67,7 @@
 		}
 
 		&:active {
+			transition: none;
 			background-color: var(--color-alert-text);
 			color: var(--color-alert-background);
 		}
@@ -110,7 +111,7 @@
 	}
 
 	&--dark {
-		--color-alert-background: #{color.$gray-700};
+		--color-alert-background: #{color.$gray-600};
 		--color-alert-text: #FFF;
 		--color-alert-border: #{color.$gray-900};
 	}
