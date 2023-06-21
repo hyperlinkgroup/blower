@@ -16,6 +16,8 @@
 	--font-size-badge: var(--blw-text-size-xs);
 	--font-weight-badge: 600;
 
+	display: flex;
+	gap: calc(var(--spacing-badge-horizontal) / 2);
 	padding: var(--spacing-badge-vertical) var(--spacing-badge-horizontal);
 	border-radius: var(--border-radius-badge);
 	background-color: var(--color-badge-background);
@@ -32,6 +34,34 @@
 		&:hover {
 			text-decoration: none;
 			background-color: var(--color-badge-background-hover);
+		}
+	}
+
+	&__close {
+		display: flex;
+		align-items: center;
+		background-color: transparent;
+		border: 0;
+		padding: var(--spacing-badge-vertical) var(--spacing-badge-horizontal);
+		margin-block: calc(var(--spacing-badge-vertical) * -1);
+		margin-inline-end: calc(var(--spacing-badge-horizontal) * -1);
+		color: var(--color-badge-text);
+		transition: background-color #{transition.$speed-fast};
+		line-height: 1;
+		border-start-end-radius: var(--border-radius-badge);
+		border-end-end-radius: var(--border-radius-badge);
+
+		&:hover {
+			background-color: var(--color-badge-background-hover);
+		}
+
+		&:active {
+			background-color: var(--color-badge-background);
+		}
+
+		svg {
+			width: 1em;
+			height: 1em;
 		}
 	}
 
