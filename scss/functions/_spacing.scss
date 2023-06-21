@@ -5,6 +5,10 @@
 ///
 /// @param {Number} $multiplier
 /// @return {String} — Value in pixel
-@function spacing($multiplier: 1) {
+@function spacing($multiplier: 1, $font-size-aware: false) {
+	@if $font-size-aware {
+		@return base.$spacer-font-size-aware * $multiplier;
+	}
+
 	@return base.$spacer * $multiplier;
 }

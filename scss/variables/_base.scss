@@ -1,4 +1,6 @@
-$spacer: .5rem !default; // 8px
+$spacing: .5 !default; // 8px
+$spacer: $spacing * 1rem !default; // Spacing based on the root font-size
+$spacer-font-size-aware: $spacing * 1em !default; // Spacing based on the current font-size of the element
 
 $corner-radius: 4px !default;
 
