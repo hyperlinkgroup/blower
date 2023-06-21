@@ -1,0 +1,94 @@
+@use '../variables/base';
+@use '../variables/color';
+@use '../variables/transition';
+
+@use '../functions' as fn;
+
+.form {
+	--color-input-background: #FFF;
+	--color-input-border: #{color.$gray-400};
+	--color-input-text: #{color.$text-dark};
+	--color-input-background-focus: #FFF;
+	--color-input-border-focus: #{color.$gray-600};
+	--color-input-text-focus: #{color.$text-dark};
+	--color-input-background-disabled: #{color.$gray-100};
+	--color-input-border-disabled: #{color.$gray-400};
+	--color-input-text-disabled: #{color.$gray-500};
+	--spacing-input-horizontal: var(--blw-spacing-md);
+	--spacing-input-vertical: #{fn.spacing()};
+	--font-size-input: var(--blw-text-size-md);
+	--font-size-input-label: var(--blw-text-size-sm);
+	--font-weight-input-label: 600;
+	--border-radius-input: #{base.$corner-radius};
+	--border-width-input: 1px;
+	--transition-input: background-color, border-color, color, box-shadow, outline;
+	--transition-duration-input: #{transition.$speed-fast};
+
+	&__item {
+
+		& + & {
+			margin-top: #{fn.spacing()};
+		}
+
+		&.has-error {
+			--color-input-background: #{color.$danger-50};
+			--color-input-border: #{color.$danger-500};
+			--color-input-text: #{color.$danger-600};
+			--color-input-placeholder: #{color.$danger-600};
+		}
+
+		&.has-success {
+			--color-input-background: #{color.$positive-50};
+			--color-input-border: #{color.$positive-500};
+			--color-input-text: #{color.$positive-600};
+			--color-input-placeholder: #{color.$positive-600};
+		}
+
+		&.has-warning {
+			--color-input-background: #{color.$warning-50};
+			--color-input-border: #{color.$warning-500};
+			--color-input-text: #{color.$warning-600};
+			--color-input-placeholder: #{color.$warning-600};
+		}
+	}
+
+	&__input {
+		background-color: var(--color-input-background);
+		border: var(--border-width-input) solid var(--color-input-border);
+		border-radius: var(--border-radius-input);
+		color: var(--color-input-text);
+		font-size: var(--font-size-input);
+		padding: var(--spacing-input-vertical) var(--spacing-input-horizontal);
+		transition-property: var(--transition-input);
+		transition-duration: var(--transition-duration-input);
+		width: 100%;
+
+		&:focus {
+			background-color: var(--color-input-background-focus);
+			border-color: var(--color-input-border-focus);
+			box-shadow: 0 0 0 1px var(--color-input-border-focus);
+			color: var(--color-input-text-focus);
+			outline: none;
+		}
+
+		&:disabled {
+			background-color: var(--color-input-background-disabled);
+			border-color: var(--color-input-border-disabled);
+			color: var(--color-input-text-disabled);
+			cursor: not-allowed;
+		}
+
+		&::placeholder {
+			color: var(--color-input-text);
+			opacity: .7;
+		}
+	}
+
+	&__label {
+		color: var(--color-input-text);
+		font-size: var(--font-size-input-label);
+		font-weight: var(--font-weight-input-label);
+		margin-block: 0;
+		margin-inline: 0;
+	}
+}
