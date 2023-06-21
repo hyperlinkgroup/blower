@@ -1,0 +1,74 @@
+@use '../variables/base';
+@use '../variables/color';
+@use '../variables/transition';
+
+@use '../functions' as fn;
+
+.badge {
+	--color-badge-background: #{color.$gray-200};
+	--color-badge-background-hover: var(--color-badge-border);
+	--color-badge-text: #{color.$gray-900};
+	--color-badge-border: #{color.$gray-300};
+	--spacing-badge-horizontal: #{fn.spacing(.75)};
+	--spacing-badge-vertical: #{fn.spacing(.5)};
+	--border-radius-badge: #{base.$corner-radius};
+	--border-width-badge: 1px;
+	--font-size-badge: var(--blw-text-size-xs);
+	--font-weight-badge: 600;
+
+	padding: var(--spacing-badge-vertical) var(--spacing-badge-horizontal);
+	border-radius: var(--border-radius-badge);
+	background-color: var(--color-badge-background);
+	color: var(--color-badge-text);
+	font-size: var(--font-size-badge);
+	font-weight: var(--font-weight-badge);
+	border: var(--border-width-badge) solid var(--color-badge-border);
+
+	&:is(a) {
+		color: var(--color-badge-text);
+		text-decoration: none;
+		transition: background-color transition.$speed-fast;
+
+		&:hover {
+			text-decoration: none;
+			background-color: var(--color-badge-background-hover);
+		}
+	}
+
+	&--primary {
+		--color-badge-background: #{color.$primary};
+		--color-badge-text: #{color.$primary-50};
+		--color-badge-border: #{color.$primary-600};
+	}
+
+	&--success {
+		--color-badge-background: #{color.$positive-200};
+		--color-badge-text: #{color.$positive-900};
+		--color-badge-border: #{color.$positive-300};
+	}
+
+	&--danger {
+		--color-badge-background: #{color.$danger-200};
+		--color-badge-text: #{color.$danger-900};
+		--color-badge-border: #{color.$danger-300};
+	}
+
+	&--warning {
+		--color-badge-background: #{color.$warning-200};
+		--color-badge-text: #{color.$warning-900};
+		--color-badge-border: #{color.$warning-300};
+	}
+
+	&--dark {
+		--color-badge-background: #{color.$gray-700};
+		--color-badge-background-hover: #{color.$gray-500};
+		--color-badge-text: #FFF;
+		--color-badge-border: #{color.$gray-900};
+	}
+
+	&--light {
+		--color-badge-background: #{color.$gray-100};
+		--color-badge-text: #{color.$gray-900};
+		--color-badge-border: #{color.$gray-200};
+	}
+}
