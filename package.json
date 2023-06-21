@@ -8,7 +8,7 @@
 		"watchAutoprefixer": "postcss dist/css/*.css --dir dist/css/ --watch --use autoprefixer",
 		"watchDocsAutoprefixer": "postcss docs/public/css/*.css --dir docs/public/css/ --watch --use autoprefixer",
 		"build": "sass scss/blower.scss dist/css/blower.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer",
-		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer",
+		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer --no-map",
 		"lint": "stylelint '**/*.scss'",
 		"lint-fix": "stylelint '**/*.scss' --fix"
 	},
@@ -27,9 +27,9 @@
 	"license": "MIT",
 	"devDependencies": {
 		"autoprefixer": "^10.4.14",
-		"postcss": "^8.4.21",
+		"postcss": "^8.4.24",
 		"postcss-cli": "^10.1.0",
-		"sass": "^1.60.0",
-		"stylelint": "^15.4.0"
+		"sass": "^1.63.5",
+		"stylelint": "^15.8.0"
 	}
 }
