@@ -25,6 +25,7 @@
 	--border-width-input: 1px;
 	--transition-input: background-color, border-color, color, box-shadow, outline;
 	--transition-duration-input: #{transition.$speed-fast};
+	--box-shadow-input: inset 1px 1px 3px rgba(0, 0, 0, .1);
 
 	&__item {
 
@@ -65,11 +66,12 @@
 		transition-property: var(--transition-input);
 		transition-duration: var(--transition-duration-input);
 		width: 100%;
+		box-shadow: var(--box-shadow-input);
 
 		&:focus {
 			background-color: var(--color-input-background-focus);
 			border-color: var(--color-input-border-focus);
-			box-shadow: 0 0 0 1px var(--color-input-border-focus);
+			box-shadow: var(--box-shadow-input), 0 0 0 1px var(--color-input-border-focus);
 			color: var(--color-input-text-focus);
 			outline: none;
 		}
