@@ -951,6 +951,34 @@
       font-size: var(--font-size-input-message);
       line-height: 1.1;
     }
+    .form__select {
+      --select-arrow: var(--color-input-border);
+      position: relative;
+    }
+    .form__select select {
+      -webkit-appearance: none;
+         -moz-appearance: none;
+              appearance: none;
+    }
+    .form__select select[multiple] {
+      padding: 0;
+    }
+    .form__select select[multiple] option {
+      padding-inline: var(--spacing-input-horizontal);
+      padding-block: var(--spacing-input-vertical);
+    }
+    .form__select:not(:has([multiple]))::after {
+      inset-inline-end: var(--spacing-input-horizontal);
+      inset-block-start: 50%;
+      transform: translateY(-50%);
+      position: absolute;
+      content: "";
+      width: 0.8em;
+      height: 0.5em;
+      background-color: var(--select-arrow);
+      -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+              clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+    }
     .form--horizontal {
       --spacing-form-between: 1rem;
     }

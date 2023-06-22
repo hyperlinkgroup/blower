@@ -226,6 +226,36 @@
 		line-height: 1.1;
 	}
 
+	&__select {
+		--select-arrow: var(--color-input-border);
+		position: relative;
+
+		select {
+			appearance: none;
+
+			&[multiple] {
+				padding: 0;
+
+				option {
+					padding-inline: var(--spacing-input-horizontal);
+					padding-block: var(--spacing-input-vertical);
+				}
+			}
+		}
+
+		&:not(:has([multiple]))::after {
+			inset-inline-end: var(--spacing-input-horizontal);
+			inset-block-start: 50%;
+			transform: translateY(-50%);
+			position: absolute;
+			content: "";
+			width: 0.8em;
+			height: 0.5em;
+			background-color: var(--select-arrow);
+			clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+		}
+	}
+
 	&--horizontal {
 		--spacing-form-between: #{fn.spacing(2)};
 
