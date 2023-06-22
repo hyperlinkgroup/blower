@@ -28,8 +28,7 @@
 	font-size: var(--font-size-card);
 	text-decoration: none;
 	border: var(--border-width-card) solid var(--color-card-border);
-	display: flex;
-	flex-direction: column;
+	display: grid;
 	gap: var(--gap-card);
 
 	&__header {
@@ -143,5 +142,49 @@
 		--background-color-card: #{color.$gray-100};
 		--color-card-text: #{color.$gray-900};
 		--color-card-border: #{color.$gray-200};
+	}
+
+	&--background-image {
+		grid-template-columns: 1fr;
+		grid-template-rows: 1fr;
+		padding: 0;
+
+		&::before {
+			content: '';
+			grid-column: 1 / -1;
+			grid-row: 1 / -1;
+			background-color: var(--background-color-card);
+			z-index: 1;
+			opacity: .6;
+			border-radius: calc(var(--border-radius-card) - var(--border-width-card));
+		}
+
+		.card__image {
+			grid-column: 1 / -1;
+			grid-row: 1 / -1;
+			border-radius: calc(var(--border-radius-card) - var(--border-width-card));
+		}
+
+		.card__wrapper {
+			display: grid;
+			gap: var(--gap-card);
+			align-content: center;
+			grid-column: 1 / -1;
+			grid-row: 1 / -1;
+			padding: var(--spacing-card-vertical) var(--spacing-card-horizontal);
+			z-index: 2;
+			border-radius: calc(var(--border-radius-card) - var(--border-width-card));
+		}
+
+		&.has-blurred-background {
+
+			.card__wrapper {
+				backdrop-filter: blur(10px) saturate(150%);
+			}
+
+			&::before {
+				opacity: .3;
+			}
+		}
 	}
 }
