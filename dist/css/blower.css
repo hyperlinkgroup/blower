@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @layer blower {
   :root {
     --blw-spacing-xs: 0.125rem;
@@ -95,7 +96,26 @@
       display: block;
     }
   }
-  @layer base {}
+  @layer base {
+    code, pre {
+      background-color: #e2e8f0;
+      border-radius: 4px;
+    }
+    code {
+      padding: 0.125rem 0.25rem;
+    }
+    pre {
+      width: -moz-max-content;
+      width: max-content;
+      max-width: 100%;
+      overflow-x: auto;
+      padding: 0.5rem 0.75rem;
+      border: 1px solid #cbd5e1;
+    }
+    pre code {
+      padding: 0;
+    }
+  }
   @layer layout {
     .theme-dashboard {
       --size-sidebar: 300px;
@@ -1526,13 +1546,16 @@
       left: var(--blw-spacing-xl);
     }
     .flow {
+      --spacing-flow: 1em;
       line-height: 1.5;
+      font-size: var(--blw-text-size-md);
     }
     .flow > * {
       margin-block: 0;
     }
     .flow > * + * {
-      margin-top: 1em;
+      -webkit-margin-before: var(--spacing-flow);
+              margin-block-start: var(--spacing-flow);
     }
     .flow ul, .flow ol {
       -webkit-padding-start: 2.5ch;
@@ -1553,8 +1576,45 @@
     .flow h5 {
       font-size: var(--blw-headline-size-xs);
     }
+    .flow h6 {
+      font-size: var(--blw-text-size-lg);
+    }
+    .flow :is(h1, h2, h3, h4, h5, h6) {
+      line-height: 1.1;
+    }
+    .flow :is(h1, h2, h3, h4, h5, h6) + p {
+      --spacing-flow: 0.5em;
+    }
     .flow figure {
       margin-inline: 0;
+    }
+    .flow blockquote {
+      -webkit-border-start: 5px solid #4cb286;
+              border-inline-start: 5px solid #4cb286;
+      -webkit-padding-start: 1em;
+              padding-inline-start: 1em;
+      padding-block: 0.5em;
+      margin-inline: 0;
+      font-size: var(--blw-text-size-xl);
+    }
+    .flow blockquote:not([class*=pull-]) {
+      margin-inline: 1.5em;
+    }
+    .flow blockquote > * {
+      margin-block: 0;
+    }
+    .flow blockquote > * + * {
+      -webkit-margin-before: var(--spacing-flow);
+              margin-block-start: var(--spacing-flow);
+    }
+    .flow blockquote cite {
+      display: block;
+      font-size: var(--blw-text-size-sm);
+      font-style: italic;
+    }
+    .flow blockquote cite::before {
+      content: "—";
+      margin-right: 1ch;
     }
     .m-0 {
       margin: 0;

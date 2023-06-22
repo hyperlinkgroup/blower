@@ -1,0 +1,25 @@
+@use '../variables/base';
+@use '../variables/color';
+
+@use '../functions' as fn;
+
+code, pre {
+	background-color: color.$gray-200;
+	border-radius: base.$corner-radius;
+}
+
+code {
+	padding: fn.spacing(0.25) fn.spacing(0.5);
+}
+
+pre {
+	width: max-content;
+	max-width: 100%;
+	overflow-x: auto;
+	padding: fn.spacing() fn.spacing(1.5);
+	border: 1px solid color.$gray-300;
+
+	code {
+		padding: 0;
+	}
+}

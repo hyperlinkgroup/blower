@@ -5,7 +5,7 @@
 
 	@layer reset { @import 'reset'; }
 
-	@layer base {  }
+	@layer base { @import 'base'; }
 
 	@layer layout {  @import 'layout'; }
 
