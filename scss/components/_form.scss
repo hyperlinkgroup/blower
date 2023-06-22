@@ -115,6 +115,8 @@
 			--color-input-border-focus: var(--color-input-border);
 			--color-checked: #{color.$primary-600};
 			--border-width-input: 2px;
+			--hover-transform-input: scale(.5);
+			--hover-filter-input: brightness(1.3);
 
 			margin: 0;
 			padding: 0;
@@ -131,7 +133,6 @@
 				content: '';
 				width: calc(var(--size-input) * .5);
 				height: calc(var(--size-input) * .5);
-				clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 				transform: scale(0);
 				transform-origin: center;
 				transition: transition.$speed-instant transform ease-in-out;
@@ -140,8 +141,8 @@
 			}
 
 			&:hover::before {
-				transform: scale(.5);
-				filter: brightness(1.3);
+				transform: var(--hover-transform-input);
+				filter: var(--hover-filter-input);
 			}
 
 			&:checked::before {
@@ -161,6 +162,51 @@
 				clip-path: none;
 				border-radius: inherit;
 			}
+		}
+
+		&[type='checkbox'] {
+
+			&:not(.is-switch)::before {
+				clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+			}
+
+			&.is-switch {
+				--transform-switch: translateX(var(--translate-x, 0));
+
+				position: relative;
+				width: 2.5em;
+				border-radius: 50vmax;
+
+				&::before {
+					position: absolute;
+					inset-block-start: 2px;
+					inset-inline-start: 2px;
+					width: 1em;
+					height: 1em;
+					transform: var(--transform-switch);
+					transform-origin: left;
+					border-radius: 50%;
+				}
+
+				&:hover::before {
+					transform: var(--transform-switch) scaleX(1.08)
+				}
+
+				&:checked {
+					--translate-x: 1em;
+
+					&:hover::before {
+						transform: var(--transform-switch) scaleX(1.08);
+						transform-origin: right;
+					}
+				}
+
+				&:not(:checked) {
+					--color-checked: #{color.$gray-400};
+					--hover-filter-input: brightness(.8);
+				}
+			}
+
 		}
 	}
 
