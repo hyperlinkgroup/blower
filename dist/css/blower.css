@@ -152,20 +152,39 @@
     .navigation {
       --spacing-links-horizontal: var(--blw-spacing-md);
       --spacing-links-vertical: 0.625rem;
+      --border-radius-links: 4px;
+    }
+    .navigation ul {
       margin: 0;
       padding: 0;
       list-style-type: none;
     }
+    .navigation__item {
+      position: relative;
+    }
     .navigation__link {
-      color: currentColor;
       display: block;
+      color: currentColor;
       padding: var(--spacing-links-vertical) var(--spacing-links-horizontal);
-      margin-inline: calc(var(--spacing-links-horizontal) * -1);
       text-decoration: none;
       transition: background-color 150ms;
     }
     .navigation__link:is(:hover, :focus-visible) {
       background-color: rgba(0, 0, 0, 0.1);
+    }
+    .navigation--vertical.card {
+      --spacing-links-horizontal: var(--spacing-card-horizontal);
+    }
+    .navigation--vertical .navigation__link {
+      padding: var(--spacing-links-vertical) var(--spacing-links-horizontal);
+      margin-inline: calc(var(--spacing-links-horizontal) * -1);
+    }
+    .navigation--horizontal ul {
+      display: flex;
+      gap: calc(var(--spacing-links-horizontal) / 2);
+    }
+    .navigation--horizontal .navigation__link {
+      border-radius: var(--border-radius-links);
     }
   }
   @layer components {
@@ -526,8 +545,9 @@
     }
     .card {
       --color-card-border: #cbd5e1;
-      --spacing-card: 0.75rem;
-      --gap-card: var(--spacing-card);
+      --spacing-card-horizontal: 0.75rem;
+      --spacing-card-vertical: 0.75rem;
+      --gap-card: var(--spacing-card-vertical) var(--spacing-card-horizontal);
       --border-radius-card: calc(4px * 2);
       --border-radius-card-image: calc(var(--border-radius-card) / 2);
       --border-width-card: 1px;
@@ -539,7 +559,7 @@
       --background-image-card: #f5f7fa;
       --color-card-text: #0d2327;
       position: relative;
-      padding: var(--spacing-card);
+      padding: var(--spacing-card-vertical) var(--spacing-card-horizontal);
       border-radius: var(--border-radius-card);
       background-color: var(--background-color-card);
       color: var(--color-card-text);
@@ -585,17 +605,17 @@
       text-decoration: underline;
     }
     .card.has-edge-image .card__image {
-      margin-inline: calc(var(--spacing-card) * -1);
+      margin-inline: calc(var(--spacing-card-horizontal) * -1);
       max-width: none;
-      width: calc(100% + var(--spacing-card) * 2);
+      width: calc(100% + var(--spacing-card-horizontal) * 2);
     }
     .card.has-edge-image .card__image:first-child {
-      -webkit-margin-before: calc(var(--spacing-card) * -1);
-              margin-block-start: calc(var(--spacing-card) * -1);
+      -webkit-margin-before: calc(var(--spacing-card-vertical) * -1);
+              margin-block-start: calc(var(--spacing-card-vertical) * -1);
     }
     .card.has-edge-image .card__image:last-child {
-      -webkit-margin-after: calc(var(--spacing-card) * -1);
-              margin-block-end: calc(var(--spacing-card) * -1);
+      -webkit-margin-after: calc(var(--spacing-card-vertical) * -1);
+              margin-block-end: calc(var(--spacing-card-vertical) * -1);
     }
     .card.has-edge-image .card__image:not(:first-child) {
       border-top-left-radius: 0;

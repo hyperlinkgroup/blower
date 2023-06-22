@@ -1,22 +1,26 @@
+@use '../variables/base';
+
 @use '../functions' as fn;
 
 .navigation {
 	--spacing-links-horizontal: var(--blw-spacing-md);
 	--spacing-links-vertical: #{fn.spacing(1.25)};
+	--border-radius-links: #{base.$corner-radius};
 
-	margin: 0;
-	padding: 0;
-	list-style-type: none;
+	ul {
+		margin: 0;
+		padding: 0;
+		list-style-type: none;
+	}
 
 	&__item {
-
+		position: relative;
 	}
 
 	&__link {
-		color: currentColor;
 		display: block;
+		color: currentColor;
 		padding: var(--spacing-links-vertical) var(--spacing-links-horizontal);
-		margin-inline: calc(var(--spacing-links-horizontal) * -1);
 		text-decoration: none;
 		transition: background-color 150ms;
 
@@ -25,7 +29,28 @@
 		}
 	}
 
+	&--vertical {
+
+		&.card {
+			--spacing-links-horizontal: var(--spacing-card-horizontal);
+		}
+
+		.navigation__link {
+			padding: var(--spacing-links-vertical) var(--spacing-links-horizontal);
+			margin-inline: calc(var(--spacing-links-horizontal) * -1);
+		}
+
+	}
+
 	&--horizontal {
 
+		ul {
+			display: flex;
+			gap: calc(var(--spacing-links-horizontal) / 2);
+		}
+
+		.navigation__link {
+			border-radius: var(--border-radius-links);
+		}
 	}
 }
