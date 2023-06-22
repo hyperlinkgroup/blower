@@ -41,6 +41,10 @@
 		padding-inline-start: 2.5ch;
 	}
 
+	code {
+		background-color: var(--color-alert-border);
+	}
+
 	& > * {
 		margin: 0;
 
