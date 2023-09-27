@@ -28,6 +28,12 @@
 .width-100 {
 	width: 100%;
 }
+.width-third {
+	width: calc(100% / 3);
+}
+.width-twothirds {
+	width: calc(100% / 1.5);
+}
 .max-content {
 	width: max-content;
 }
