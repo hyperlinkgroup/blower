@@ -1,7 +1,7 @@
 {
-	"name": "blower",
-	"version": "0.0.1",
-	"description": "A frontend framework for modern browsers",
+	"name": "@hyperlinkgroup/blower",
+	"version": "1.0.0",
+	"description": "A modern frontend framework for modern browsers",
 	"main": "index.js",
 	"scripts": {
 		"watch": "sass --watch scss/blower.scss dist/css/blower.css && npm run watchAutoprefixer",
@@ -23,6 +23,13 @@
 		"front-end",
 		"web"
 	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/hyperlinkgroup/blower"
+	},
+	"bugs": {
+		"url": "https://github.com/hyperlinkgroup/blower/issues"
+	},
 	"author": "HYPERLINK Group",
 	"license": "MIT",
 	"devDependencies": {
