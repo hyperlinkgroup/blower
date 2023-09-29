@@ -68,9 +68,9 @@
 		}
 
 		&:is(:active, .is-active) {
+			transition-duration: 0ms;
 			background-color: var(--color-background-item-active);
 			color: #FFF;
-			transition-duration: initial;
 		}
 
 		&.is-primary {

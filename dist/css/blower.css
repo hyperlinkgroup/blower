@@ -194,6 +194,10 @@
     .navigation__link:is(:hover, :focus-visible) {
       background-color: rgba(0, 0, 0, 0.1);
     }
+    .navigation__link:is(:active) {
+      transition-duration: 0ms;
+      background-color: rgba(0, 0, 0, 0.2);
+    }
     .navigation--vertical.card {
       --spacing-links-horizontal: var(--spacing-card-horizontal);
     }
@@ -269,7 +273,7 @@
       background-color: var(--color-alert-border);
     }
     .alert__close:active {
-      transition: none;
+      transition-duration: 0ms;
       background-color: var(--color-alert-text);
       color: var(--color-alert-background);
     }
@@ -364,7 +368,7 @@
       background-color: var(--color-badge-background-hover);
     }
     .badge__close:active {
-      transition: none;
+      transition-duration: 0ms;
       background-color: var(--color-badge-background);
     }
     .badge__close svg {
@@ -452,6 +456,7 @@
       color: var(--color-button-text-hover);
     }
     .button:active:not(:disabled) {
+      transition-duration: 0ms;
       background-color: var(--color-button-background-active);
       border-color: var(--color-button-border-active);
       color: var(--color-button-text-active);
@@ -773,9 +778,9 @@
       background-color: var(--color-background-item-hover);
     }
     .dropdown__item:is(:active, .is-active) {
+      transition-duration: 0ms;
       background-color: var(--color-background-item-active);
       color: #FFF;
-      transition-duration: initial;
     }
     .dropdown__item.is-primary {
       font-weight: 600;
@@ -1135,7 +1140,7 @@
       background-color: rgba(0, 0, 0, 0.1);
     }
     .modal__close:active {
-      transition: none;
+      transition-duration: 0ms;
       background-color: var(--color-alert-text);
       color: var(--color-alert-background);
     }

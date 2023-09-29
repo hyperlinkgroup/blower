@@ -29,6 +29,11 @@
 		&:is(:hover, :focus-visible) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
+
+		&:is(:active) {
+			transition-duration: 0ms;
+			background-color: rgba(0, 0, 0, 0.2);
+		}
 	}
 
 	&--vertical {

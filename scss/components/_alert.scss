@@ -71,7 +71,7 @@
 		}
 
 		&:active {
-			transition: none;
+			transition-duration: 0ms;
 			background-color: var(--color-alert-text);
 			color: var(--color-alert-background);
 		}

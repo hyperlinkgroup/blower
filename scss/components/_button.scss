@@ -43,6 +43,7 @@
 	}
 
 	&:active:not(:disabled) {
+		transition-duration: 0ms;
 		background-color: var(--color-button-background-active);
 		border-color: var(--color-button-border-active);
 		color: var(--color-button-text-active);

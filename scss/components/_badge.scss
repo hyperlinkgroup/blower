@@ -61,7 +61,7 @@
 		}
 
 		&:active {
-			transition: none;
+			transition-duration: 0ms;
 			background-color: var(--color-badge-background);
 		}
 
