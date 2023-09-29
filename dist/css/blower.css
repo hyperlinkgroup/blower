@@ -1296,6 +1296,10 @@
       width: -moz-min-content;
       width: min-content;
     }
+    .fit-content {
+      width: -moz-fit-content;
+      width: fit-content;
+    }
     .flex-1 {
       flex: 1;
     }
@@ -1305,14 +1309,23 @@
     .flex-3 {
       flex: 3;
     }
-    .span-1 {
+    .column-span-1 {
       grid-column: span 1;
     }
-    .span-2 {
+    .column-span-2 {
       grid-column: span 2;
     }
-    .span-3 {
+    .column-span-3 {
       grid-column: span 3;
+    }
+    .row-span-1 {
+      grid-row: span 1;
+    }
+    .row-span-2 {
+      grid-row: span 2;
+    }
+    .row-span-3 {
+      grid-row: span 3;
     }
     .height-0 {
       height: 0;
