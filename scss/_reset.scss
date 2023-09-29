@@ -2,6 +2,14 @@
 
 @use 'mixins' as mx;
 
+:root {
+	--flow-direction: 1;
+}
+
+[dir="rtl"] {
+	--flow-direction: -1;
+}
+
 *, *::before, *::after {
 	box-sizing: border-box;
 }

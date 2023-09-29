@@ -172,7 +172,7 @@
 
 			&.is-switch {
 				--translate-x: 0;
-				--transform-switch: translateX(var(--translate-x));
+				--transform-switch: translateX(calc(var(--flow-direction) * var(--translate-x)));
 
 				position: relative;
 				width: 2.5em;
@@ -195,10 +195,6 @@
 
 				&:checked {
 					--translate-x: 1em;
-
-					[dir='rtl'] & {
-						--translate-x: -1em;
-					}
 
 					&:hover::before {
 						transform: var(--transform-switch) scaleX(1.08);
@@ -233,6 +229,7 @@
 
 	&__select {
 		--select-arrow: var(--color-input-border);
+
 		position: relative;
 
 		select {

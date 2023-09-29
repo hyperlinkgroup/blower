@@ -122,7 +122,7 @@
 	&--start {
 
 		.dropdown__list {
-			left: 0;
+			inset-inline-start: 0;
 		}
 	}
 
@@ -133,8 +133,8 @@
 		}
 
 		.dropdown__list {
-			left: 50%;
-			transform: translateX(-50%) var(--base-transform);
+			inset-inline-start: 50%;
+			transform: translateX(calc(var(--flow-direction) * -50%)) var(--base-transform);
 		}
 	}
 
@@ -145,7 +145,7 @@
 		}
 
 		.dropdown__list {
-			right: 0;
+			inset-inline-end: 0;
 		}
 	}
 }

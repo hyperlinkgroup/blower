@@ -19,6 +19,12 @@
   }
   @layer reset, base, layout, components, utilities;
   @layer reset {
+    :root {
+      --flow-direction: 1;
+    }
+    [dir=rtl] {
+      --flow-direction: -1;
+    }
     *, *::before, *::after {
       box-sizing: border-box;
     }
@@ -817,20 +823,20 @@
       margin-inline-start: auto;
     }
     .dropdown--start .dropdown__list {
-      left: 0;
+      inset-inline-start: 0;
     }
     .dropdown--center .dropdown__button {
       margin-inline: auto;
     }
     .dropdown--center .dropdown__list {
-      left: 50%;
-      transform: translateX(-50%) var(--base-transform);
+      inset-inline-start: 50%;
+      transform: translateX(calc(var(--flow-direction) * -50%)) var(--base-transform);
     }
     .dropdown--end .dropdown__button {
       margin-inline-start: auto;
     }
     .dropdown--end .dropdown__list {
-      right: 0;
+      inset-inline-end: 0;
     }
     .form {
       --color-input-background: #FFF;
@@ -981,7 +987,7 @@
     }
     .form__input[type=checkbox].is-switch {
       --translate-x: 0;
-      --transform-switch: translateX(var(--translate-x));
+      --transform-switch: translateX(calc(var(--flow-direction) * var(--translate-x)));
       position: relative;
       width: 2.5em;
       border-radius: 50vmax;
@@ -1001,9 +1007,6 @@
     }
     .form__input[type=checkbox].is-switch:checked {
       --translate-x: 1em;
-    }
-    [dir=rtl] .form__input[type=checkbox].is-switch:checked {
-      --translate-x: -1em;
     }
     .form__input[type=checkbox].is-switch:checked:hover::before {
       transform: var(--transform-switch) scaleX(1.08);
