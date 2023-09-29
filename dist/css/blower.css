@@ -552,23 +552,23 @@
       border-radius: 0;
     }
     .button-group:not(.button-group--vertical) .button:first-child {
-      border-top-left-radius: var(--border-radius-button);
-      border-bottom-left-radius: var(--border-radius-button);
+      border-start-start-radius: var(--border-radius-button);
+      border-end-start-radius: var(--border-radius-button);
     }
     .button-group:not(.button-group--vertical) .button:last-child {
-      border-top-right-radius: var(--border-radius-button);
-      border-bottom-right-radius: var(--border-radius-button);
+      border-start-end-radius: var(--border-radius-button);
+      border-end-end-radius: var(--border-radius-button);
     }
     .button-group--vertical {
       flex-direction: column;
     }
     .button-group--vertical .button:first-child {
-      border-top-left-radius: var(--border-radius-button);
-      border-top-right-radius: var(--border-radius-button);
+      border-start-start-radius: var(--border-radius-button);
+      border-start-end-radius: var(--border-radius-button);
     }
     .button-group--vertical .button:last-child {
-      border-bottom-left-radius: var(--border-radius-button);
-      border-bottom-right-radius: var(--border-radius-button);
+      border-end-start-radius: var(--border-radius-button);
+      border-end-end-radius: var(--border-radius-button);
     }
     .card {
       --color-card-border: #cbd5e1;
@@ -642,12 +642,12 @@
       margin-block-end: calc(var(--spacing-card-vertical) * -1);
     }
     .card.has-edge-image .card__image:not(:first-child) {
-      border-top-left-radius: 0;
-      border-top-right-radius: 0;
+      border-start-start-radius: 0;
+      border-start-end-radius: 0;
     }
     .card.has-edge-image .card__image:not(:last-child) {
-      border-bottom-left-radius: 0;
-      border-bottom-right-radius: 0;
+      border-end-start-radius: 0;
+      border-end-end-radius: 0;
     }
     .card--primary {
       --background-color-card: #4cb286;
