@@ -18,7 +18,9 @@
 	}
 
 	&__link {
-		display: block;
+		display: flex;
+		gap: calc(var(--spacing-links-horizontal) / 2);
+		align-items: center;
 		color: currentColor;
 		padding: var(--spacing-links-vertical) var(--spacing-links-horizontal);
 		text-decoration: none;
@@ -38,6 +40,7 @@
 		.navigation__link {
 			padding: var(--spacing-links-vertical) var(--spacing-links-horizontal);
 			margin-inline: calc(var(--spacing-links-horizontal) * -1);
+			gap: var(--spacing-links-horizontal);
 		}
 
 	}
