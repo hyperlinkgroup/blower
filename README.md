@@ -2,6 +2,9 @@
 
 Blower is a modern CSS frontend framework for modern browsers. It brings full support for RTL languages, uses the new CSS Cascade Layers syntax and just doesn't want to stay in your way.
 
+## Currently in development
+Blower is currently in development and not ready for production use. You can still try it out, but be aware that there could be still some bugs and missing features. Watch this project to follow the development progress.
+
 ## Minimum Browser support
 As Blower tries to bring you the newest CSS features, it requires a modern browser.  
 The minimum browser support (according to **[Can I use](https://caniuse.com/css-cascade-layers)**) is:
