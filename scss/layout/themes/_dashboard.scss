@@ -35,6 +35,12 @@
 			z-index: -1;
 		}
 
+		.page-title {
+			margin-block-end: fn.spacing(2);
+			font-size: 2rem;
+			color: color.$text-light;
+		}
+
 		.section-title {
 			margin-block: fn.spacing(3) fn.spacing(.5);
 			font-size: 1.25rem;
@@ -58,11 +64,11 @@
 		padding: var(--spacing-segments);
 	}
 
-	&.has-no-header, &:not(:has(.layout-header)) {
+	&.has-no-header, &:not(:has(.layout-header:not(:empty))) {
 		--area-row-first: 'sidebar main';
 	}
 
-	&.has-no-footer, &:not(:has(.layout-footer)) {
+	&.has-no-footer, &:not(:has(.layout-footer:not(:empty))) {
 		--area-row-last: 'sidebar main';
 	}
 }

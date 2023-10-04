@@ -25,54 +25,81 @@
     [dir=rtl] {
       --flow-direction: -1;
     }
-    *, *::before, *::after {
+    /* Box sizing rules */
+    *,
+    *::before,
+    *::after {
       box-sizing: border-box;
     }
+    /* Prevent font size inflation */
     html {
-      line-height: 1.3;
-      -webkit-text-size-adjust: 100%;
+      -moz-text-size-adjust: none;
+      -webkit-text-size-adjust: none;
+      text-size-adjust: none;
     }
-    body {
+    /* Remove default margin in favour of better control in authored CSS */
+    body, h1, h2, h3, h4, p,
+    figure, blockquote {
       margin: 0;
+    }
+    /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+    ul[role=list],
+    ol[role=list] {
+      list-style: none;
+    }
+    /* Set core body defaults */
+    body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
+      line-height: 1.5;
       min-height: 100vh;
       min-height: 100svh;
     }
-    pre,
-    code,
-    kbd,
-    samp {
-      font-family: monospace, monospace;
-      font-size: 1em;
+    /* Set shorter line heights on headings and interactive elements */
+    h1, h2, h3, h4,
+    button, input, label {
+      line-height: 1.1;
     }
-    button,
-    input,
-    optgroup,
-    select,
-    textarea {
-      font-family: inherit;
-      font-size: 100%;
-      line-height: 1.15;
+    /* Balance text wrapping on headings */
+    h1, h2,
+    h3, h4 {
+      text-wrap: balance;
     }
-    textarea {
+    /* A elements that don't have a class get default styles */
+    a:not([class]) {
+      -webkit-text-decoration-skip: ink;
+              text-decoration-skip-ink: auto;
+      color: currentColor;
+    }
+    /* Make images easier to work with */
+    img,
+    picture,
+    svg {
+      max-width: 100%;
+      display: block;
+      vertical-align: middle;
+    }
+    /* Inherit fonts for inputs and buttons */
+    input, button,
+    textarea, select {
+      font: inherit;
+    }
+    /* Make sure textareas without a rows attribute are not tiny and change the resize direction to only vertical */
+    textarea:not([rows]) {
+      min-height: 10em;
       resize: vertical;
     }
-    button,
-    select {
-      text-transform: none;
+    /* Anything that has been anchored to should have extra scroll margin */
+    :target {
+      scroll-margin-block: 5ex;
     }
-    button,
-    [type=button],
-    [type=reset],
-    [type=submit] {
-      -webkit-appearance: button;
-    }
+    /* Add pointer cursor to buttons */
     button:not(:disabled),
     [type=button]:not(:disabled),
     [type=reset]:not(:disabled),
     [type=submit]:not(:disabled) {
       cursor: pointer;
     }
+    /* Unify the sub and sup stylings */
     sub,
     sup {
       font-size: 75%;
@@ -86,23 +113,18 @@
     sup {
       top: -0.5em;
     }
-    img,
-    svg {
-      vertical-align: middle;
-    }
-    button:focus:not(:focus-visible) {
-      outline: 0;
-    }
     iframe {
       border: 0;
     }
-    iframe,
-    img {
-      max-width: 100%;
-      display: block;
-    }
   }
   @layer base {
+    pre,
+    code,
+    kbd,
+    samp {
+      font-family: monospace, monospace;
+      font-size: 1em;
+    }
     code, pre {
       background-color: #e2e8f0;
       border-radius: 4px;
@@ -151,6 +173,11 @@
       background: linear-gradient(to right, transparent, rgba(0, 0, 0, 0.1));
       z-index: -1;
     }
+    .theme-dashboard .layout-sidebar .page-title {
+      margin-block-end: 1rem;
+      font-size: 2rem;
+      color: #f0faf5;
+    }
     .theme-dashboard .layout-sidebar .section-title {
       margin-block: 1.5rem 0.25rem;
       font-size: 1.25rem;
@@ -169,10 +196,10 @@
       grid-area: footer;
       padding: var(--spacing-segments);
     }
-    .theme-dashboard.has-no-header, .theme-dashboard:not(:has(.layout-header)) {
+    .theme-dashboard.has-no-header, .theme-dashboard:not(:has(.layout-header:not(:empty))) {
       --area-row-first: "sidebar main";
     }
-    .theme-dashboard.has-no-footer, .theme-dashboard:not(:has(.layout-footer)) {
+    .theme-dashboard.has-no-footer, .theme-dashboard:not(:has(.layout-footer:not(:empty))) {
       --area-row-last: "sidebar main";
     }
     .navigation {

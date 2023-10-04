@@ -3,6 +3,14 @@
 
 @use '../functions' as fn;
 
+pre,
+code,
+kbd,
+samp {
+	font-family: monospace, monospace;
+	font-size: 1em;
+}
+
 code, pre {
 	background-color: color.$gray-200;
 	border-radius: base.$corner-radius;
