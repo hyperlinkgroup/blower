@@ -132,16 +132,30 @@
   }
   @layer layout {
     .theme-dashboard {
-      --size-sidebar: 300px;
+      --size-sidebar: 200px;
       --spacing-segments: var(--blw-spacing-md);
-      --area-row-first: "sidebar header";
-      --area-row-last: "sidebar footer";
+      --area-row-first: "header";
+      --area-row-last: "footer";
       display: grid;
-      grid-template-columns: var(--size-sidebar) 1fr;
-      grid-template-rows: auto 1fr auto;
-      grid-template-areas: var(--area-row-first) "sidebar main" var(--area-row-last);
+      grid-template-columns: 1fr;
+      grid-template-areas: "sidebar" var(--area-row-first) "main" var(--area-row-last);
       min-height: 100vh;
       min-height: 100svh;
+    }
+    @media screen and (min-width: 768px) {
+      .theme-dashboard {
+        --area-row-first: "sidebar header";
+        --area-row-last: "sidebar footer";
+        display: grid;
+        grid-template-columns: var(--size-sidebar) 1fr;
+        grid-template-rows: auto 1fr auto;
+        grid-template-areas: var(--area-row-first) "sidebar main" var(--area-row-last);
+      }
+    }
+    @media screen and (min-width: 1024px) {
+      .theme-dashboard {
+        --size-sidebar: 300px;
+      }
     }
     .theme-dashboard .layout-sidebar {
       grid-area: sidebar;
@@ -178,15 +192,31 @@
       grid-area: header;
       padding: var(--spacing-segments);
     }
+    .theme-dashboard .layout-header:empty {
+      display: none;
+    }
     .theme-dashboard .layout-footer {
       grid-area: footer;
       padding: var(--spacing-segments);
     }
+    .theme-dashboard .layout-footer:empty {
+      display: none;
+    }
     .theme-dashboard.has-no-header, .theme-dashboard:not(:has(.layout-header:not(:empty))) {
-      --area-row-first: "sidebar main";
+      --area-row-first: "sidebar";
+    }
+    @media (min-width: 768px) {
+      .theme-dashboard.has-no-header, .theme-dashboard:not(:has(.layout-header:not(:empty))) {
+        --area-row-first: "sidebar main";
+      }
     }
     .theme-dashboard.has-no-footer, .theme-dashboard:not(:has(.layout-footer:not(:empty))) {
-      --area-row-last: "sidebar main";
+      --area-row-last: "main";
+    }
+    @media (min-width: 768px) {
+      .theme-dashboard.has-no-footer, .theme-dashboard:not(:has(.layout-footer:not(:empty))) {
+        --area-row-last: "sidebar main";
+      }
     }
     .navigation {
       --spacing-links-horizontal: var(--blw-spacing-md);
