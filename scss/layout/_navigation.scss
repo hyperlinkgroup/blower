@@ -44,10 +44,12 @@
 
 		.navigation__link {
 			padding: var(--spacing-links-vertical) var(--spacing-links-horizontal);
-			margin-inline: calc(var(--spacing-links-horizontal) * -1);
 			gap: var(--spacing-links-horizontal);
 		}
 
+		.layout-sidebar & {
+			margin-inline: calc(var(--spacing-links-horizontal) * -1);
+		}
 	}
 
 	&--horizontal {
