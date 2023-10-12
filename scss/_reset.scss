@@ -40,7 +40,7 @@ ol[role='list'] {
 
 /// Set core body defaults
 body {
-	font-family: font.$fallback;
+	font-family: font.$primary;
 	line-height: 1.5;
 	@include mx.viewport-height(100, 'min');
 }
