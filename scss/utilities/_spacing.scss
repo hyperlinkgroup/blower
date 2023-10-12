@@ -21,6 +21,9 @@
 .mt-0 {
 	margin-top: 0;
 }
+.mt-auto {
+	margin-top: auto;
+}
 .mt-xs {
 	margin-top: var(--blw-spacing-xs);
 }
@@ -39,6 +42,9 @@
 
 .mb-0 {
 	margin-bottom: 0;
+}
+.mb-auto {
+	margin-bottom: auto;
 }
 .mb-xs {
 	margin-bottom: var(--blw-spacing-xs);
@@ -59,6 +65,9 @@
 .mr-0 {
 	margin-right: 0;
 }
+.mr-auto {
+	margin-right: auto;
+}
 .mr-xs {
 	margin-right: var(--blw-spacing-xs);
 }
@@ -77,6 +86,9 @@
 
 .ml-0 {
 	margin-left: 0;
+}
+.ml-auto {
+	margin-left: auto;
 }
 .ml-xs {
 	margin-left: var(--blw-spacing-xs);
