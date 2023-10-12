@@ -1,0 +1,11 @@
+#!/bin/sh
+
+npm run prod
+
+# Check exit code of the last command
+if [ $? -ne 0 ]; then
+  echo "npm run prod failed. Aborting commit."
+  exit 1
+fi
+
+git add dist/css/blower.css dist/css/blower.min.css
