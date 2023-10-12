@@ -97,6 +97,9 @@
 .m-inline-0 {
 	margin-inline: 0;
 }
+.m-inline-auto {
+	margin-inline: auto;
+}
 .m-inline-xs {
 	margin-inline: var(--blw-spacing-xs);
 }
@@ -115,6 +118,9 @@
 
 .m-block-0 {
 	margin-block: 0;
+}
+.m-block-auto {
+	margin-block: auto;
 }
 .m-block-xs {
 	margin-block: var(--blw-spacing-xs);
