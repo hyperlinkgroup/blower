@@ -52,6 +52,36 @@
 .flex-3 {
 	flex: 3;
 }
+.columns-2 {
+	grid-template-columns: repeat(2, 1fr);
+}
+.columns-3 {
+	grid-template-columns: repeat(3, 1fr);
+}
+.columns-4 {
+	grid-template-columns: repeat(4, 1fr);
+}
+.columns-5 {
+	grid-template-columns: repeat(5, 1fr);
+}
+.columns-6 {
+	grid-template-columns: repeat(6, 1fr);
+}
+.rows-2 {
+	grid-template-rows: repeat(2, 1fr);
+}
+.rows-3 {
+	grid-template-rows: repeat(3, 1fr);
+}
+.rows-4 {
+	grid-template-rows: repeat(4, 1fr);
+}
+.rows-5 {
+	grid-template-rows: repeat(5, 1fr);
+}
+.rows-6 {
+	grid-template-rows: repeat(6, 1fr);
+}
 .column-span-1 {
 	grid-column: span 1;
 }
