@@ -23,9 +23,8 @@
 	--font-weight-input-label: 600;
 	--border-radius-input: #{base.$corner-radius};
 	--border-input-width: 1px;
-	--transition-input: background-color, border-color, color, box-shadow, outline;
+	--transition-input: background-color, border-color, color, outline;
 	--transition-duration-input: #{transition.$speed-fast};
-	--box-shadow-input: inset 1px 1px 3px rgba(0, 0, 0, .1);
 
 	&__item {
 
@@ -86,7 +85,6 @@
 		transition-property: var(--transition-input);
 		transition-duration: var(--transition-duration-input);
 		width: 100%;
-		box-shadow: var(--box-shadow-input);
 
 		&:focus {
 			background-color: var(--color-input-background-focus);

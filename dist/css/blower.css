@@ -902,9 +902,8 @@
       --font-weight-input-label: 600;
       --border-radius-input: 4px;
       --border-input-width: 1px;
-      --transition-input: background-color, border-color, color, box-shadow, outline;
+      --transition-input: background-color, border-color, color, outline;
       --transition-duration-input: 200ms;
-      --box-shadow-input: inset 1px 1px 3px rgba(0, 0, 0, .1);
     }
     .form__item + .form__item {
       margin-top: var(--spacing-form-between);
@@ -954,7 +953,6 @@
       transition-property: var(--transition-input);
       transition-duration: var(--transition-duration-input);
       width: 100%;
-      box-shadow: var(--box-shadow-input);
     }
     .form__input:focus {
       background-color: var(--color-input-background-focus);
