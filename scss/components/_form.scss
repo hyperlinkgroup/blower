@@ -258,6 +258,22 @@
 		}
 	}
 
+	&__group {
+		--size-input: 12em;
+
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(var(--size-input), 1fr));
+		gap: var(--spacing-form-between);
+
+		& + & {
+			margin-top: var(--spacing-form-between);
+		}
+
+		.form__item {
+			margin: 0;
+		}
+	}
+
 	&--horizontal {
 		--spacing-form-between: #{fn.spacing(2)};
 

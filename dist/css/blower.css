@@ -1103,6 +1103,18 @@
       -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
               clip-path: polygon(100% 0%, 0 0%, 50% 100%);
     }
+    .form__group {
+      --size-input: 12em;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(var(--size-input), 1fr));
+      gap: var(--spacing-form-between);
+    }
+    .form__group + .form__group {
+      margin-top: var(--spacing-form-between);
+    }
+    .form__group .form__item {
+      margin: 0;
+    }
     .form--horizontal {
       --spacing-form-between: 1rem;
     }
