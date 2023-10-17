@@ -11,6 +11,8 @@
 	--color-input-background-focus: #FFF;
 	--color-input-border-focus: #{color.$gray-600};
 	--color-input-text-focus: #{color.$text-dark};
+	--width-input-outline-focus: 2px;
+	--offset-input-outline-focus: 2px;
 	--color-input-background-disabled: #{color.$gray-100};
 	--color-input-border-disabled: #{color.$gray-400};
 	--color-input-text-disabled: #{color.$gray-500};
@@ -91,7 +93,8 @@
 			border-color: var(--color-input-border-focus);
 			box-shadow: var(--box-shadow-input), 0 0 0 1px var(--color-input-border-focus);
 			color: var(--color-input-text-focus);
-			outline: none;
+			outline: var(--width-input-outline-focus) solid var(--color-input-border-focus);
+			outline-offset: var(--offset-input-outline-focus);
 		}
 
 		&:disabled {

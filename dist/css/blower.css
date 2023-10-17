@@ -479,6 +479,8 @@
       --color-button-background-hover: #2c6a56;
       --color-button-text-hover: #FFF;
       --color-button-border-hover: #2c6a56;
+      --width-button-outline-focus: 2px;
+      --offset-button-outline-focus: 2px;
       --color-button-background-active: #0d2327;
       --color-button-text-active: #FFF;
       --color-button-border-active: #0d2327;
@@ -507,6 +509,10 @@
       background-color: var(--color-button-background-hover);
       border-color: var(--color-button-border-hover);
       color: var(--color-button-text-hover);
+    }
+    .button:focus-visible {
+      outline: var(--width-button-outline-focus) solid var(--color-button-background-hover);
+      outline-offset: var(--offset-button-outline-focus);
     }
     .button:active:not(:disabled) {
       transition-duration: 0ms;
@@ -895,6 +901,8 @@
       --color-input-background-focus: #FFF;
       --color-input-border-focus: #475569;
       --color-input-text-focus: #0d2327;
+      --width-input-outline-focus: 2px;
+      --offset-input-outline-focus: 2px;
       --color-input-background-disabled: #f5f7fa;
       --color-input-border-disabled: #94a3b8;
       --color-input-text-disabled: #64748b;
@@ -964,7 +972,8 @@
       border-color: var(--color-input-border-focus);
       box-shadow: var(--box-shadow-input), 0 0 0 1px var(--color-input-border-focus);
       color: var(--color-input-text-focus);
-      outline: none;
+      outline: var(--width-input-outline-focus) solid var(--color-input-border-focus);
+      outline-offset: var(--offset-input-outline-focus);
     }
     .form__input:disabled {
       background-color: var(--color-input-background-disabled);

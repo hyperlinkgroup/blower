@@ -11,6 +11,8 @@
 	--color-button-background-hover: #{color.$primary-dark};
 	--color-button-text-hover: #FFF;
 	--color-button-border-hover: #{color.$primary-dark};
+	--width-button-outline-focus: 2px;
+	--offset-button-outline-focus: 2px;
 	--color-button-background-active: #{color.$primary-darker};
 	--color-button-text-active: #FFF;
 	--color-button-border-active: #{color.$primary-darker};
@@ -40,6 +42,11 @@
 		background-color: var(--color-button-background-hover);
 		border-color: var(--color-button-border-hover);
 		color: var(--color-button-text-hover);
+	}
+
+	&:focus-visible {
+		outline: var(--width-button-outline-focus) solid var(--color-button-background-hover);
+		outline-offset: var(--offset-button-outline-focus);
 	}
 
 	&:active:not(:disabled) {
