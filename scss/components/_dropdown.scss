@@ -98,6 +98,10 @@
 		}
 	}
 
+	&[aria-expanded='true'] {
+		z-index: 1;
+	}
+
 	.is-seperated {
 		border-top: var(--width-border) solid var(--color-border);
 		margin-block-start: var(--spacing-list);

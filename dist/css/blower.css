@@ -854,6 +854,9 @@
       align-items: center;
       gap: 0.5em;
     }
+    .dropdown[aria-expanded=true] {
+      z-index: 1;
+    }
     .dropdown .is-seperated {
       border-top: var(--width-border) solid var(--color-border);
       margin-block-start: var(--spacing-list);
