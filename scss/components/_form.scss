@@ -25,7 +25,7 @@
 	--font-weight-input-label: 600;
 	--border-radius-input: #{base.$corner-radius};
 	--border-input-width: 1px;
-	--transition-input: background-color, border-color, color, outline;
+	--transition-input: background-color, border-color, color, outline-color;
 	--transition-duration-input: #{transition.$speed-fast};
 
 	&__item {
@@ -87,14 +87,16 @@
 		transition-property: var(--transition-input);
 		transition-duration: var(--transition-duration-input);
 		width: 100%;
+		outline: var(--width-input-outline-focus) solid transparent;
+		outline-offset: var(--offset-input-outline-focus);
 
-		&:focus {
+		&:focus-within {
 			background-color: var(--color-input-background-focus);
 			border-color: var(--color-input-border-focus);
 			box-shadow: var(--box-shadow-input), 0 0 0 1px var(--color-input-border-focus);
 			color: var(--color-input-text-focus);
 			outline: var(--width-input-outline-focus) solid var(--color-input-border-focus);
-			outline-offset: var(--offset-input-outline-focus);
+
 		}
 
 		&:disabled {

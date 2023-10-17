@@ -35,8 +35,10 @@
 	font-weight: var(--font-weight-button);
 	text-decoration: none;
 	border: var(--border-width-button) solid var(--color-button-border);
-	transition-property: background-color, border-color, color;
+	transition-property: background-color, border-color, color, outline-color;
 	transition-duration: #{transition.$speed-fast};
+	outline: var(--width-button-outline-focus) solid transparent;
+	outline-offset: var(--offset-button-outline-focus);
 
 	&:is(:hover, :focus-visible):not(:disabled) {
 		background-color: var(--color-button-background-hover);
@@ -46,7 +48,6 @@
 
 	&:focus-visible {
 		outline: var(--width-button-outline-focus) solid var(--color-button-background-hover);
-		outline-offset: var(--offset-button-outline-focus);
 	}
 
 	&:active:not(:disabled) {

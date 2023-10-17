@@ -502,8 +502,10 @@
       font-weight: var(--font-weight-button);
       text-decoration: none;
       border: var(--border-width-button) solid var(--color-button-border);
-      transition-property: background-color, border-color, color;
+      transition-property: background-color, border-color, color, outline-color;
       transition-duration: 200ms;
+      outline: var(--width-button-outline-focus) solid transparent;
+      outline-offset: var(--offset-button-outline-focus);
     }
     .button:is(:hover, :focus-visible):not(:disabled) {
       background-color: var(--color-button-background-hover);
@@ -512,7 +514,6 @@
     }
     .button:focus-visible {
       outline: var(--width-button-outline-focus) solid var(--color-button-background-hover);
-      outline-offset: var(--offset-button-outline-focus);
     }
     .button:active:not(:disabled) {
       transition-duration: 0ms;
@@ -915,7 +916,7 @@
       --font-weight-input-label: 600;
       --border-radius-input: 4px;
       --border-input-width: 1px;
-      --transition-input: background-color, border-color, color, outline;
+      --transition-input: background-color, border-color, color, outline-color;
       --transition-duration-input: 200ms;
     }
     .form__item + .form__item {
@@ -966,14 +967,15 @@
       transition-property: var(--transition-input);
       transition-duration: var(--transition-duration-input);
       width: 100%;
+      outline: var(--width-input-outline-focus) solid transparent;
+      outline-offset: var(--offset-input-outline-focus);
     }
-    .form__input:focus {
+    .form__input:focus-within {
       background-color: var(--color-input-background-focus);
       border-color: var(--color-input-border-focus);
       box-shadow: var(--box-shadow-input), 0 0 0 1px var(--color-input-border-focus);
       color: var(--color-input-text-focus);
       outline: var(--width-input-outline-focus) solid var(--color-input-border-focus);
-      outline-offset: var(--offset-input-outline-focus);
     }
     .form__input:disabled {
       background-color: var(--color-input-background-disabled);
