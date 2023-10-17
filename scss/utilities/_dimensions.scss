@@ -1,20 +1,24 @@
-.width-0 {
-	width: 0;
-}
-.width-xs {
-	width: 1rem;
-}
-.width-sm {
-	width: 2.5rem;
-}
-.width-md {
-	width: 10rem;
-}
-.width-lg {
-	width: 25rem;
-}
-.width-xl {
-	width: 50rem;
+@use 'sass:map';
+
+$sizes: (
+	0: 0,
+	xs: 1rem,
+	sm: 2.5rem,
+	md: 10rem,
+	lg: 25rem,
+	xl: 60rem,
+);
+
+@each $size, $value in $sizes {
+	.width-#{$size} {
+		width: $value;
+	}
+	.max-width-#{$size} {
+		max-width: $value;
+	}
+	.min-width-#{$size} {
+		min-width: $value;
+	}
 }
 .width-25 {
 	width: 25%;
@@ -43,6 +47,7 @@
 .fit-content {
 	width: fit-content;
 }
+
 .flex-1 {
 	flex: 1;
 }
@@ -52,6 +57,7 @@
 .flex-3 {
 	flex: 3;
 }
+
 .columns-2 {
 	grid-template-columns: repeat(2, 1fr);
 }
@@ -67,6 +73,7 @@
 .columns-6 {
 	grid-template-columns: repeat(6, 1fr);
 }
+
 .rows-2 {
 	grid-template-rows: repeat(2, 1fr);
 }
@@ -82,6 +89,7 @@
 .rows-6 {
 	grid-template-rows: repeat(6, 1fr);
 }
+
 .column-span-1 {
 	grid-column: span 1;
 }
@@ -91,6 +99,7 @@
 .column-span-3 {
 	grid-column: span 3;
 }
+
 .row-span-1 {
 	grid-row: span 1;
 }
@@ -101,59 +110,38 @@
 	grid-row: span 3;
 }
 
-.height-0 {
-	height: 0;
-}
-.height-xs {
-	height: 1rem;
-}
-.height-sm {
-	height: 2.5rem;
-}
-.height-md {
-	height: 5rem;
-}
-.height-lg {
-	height: 10rem;
-}
-.height-xl {
-	height: 20rem;
+@each $size, $value in $sizes {
+	.height-#{$size} {
+		height: $value;
+	}
+	.max-height-#{$size} {
+		max-height: $value;
+	}
+	.min-height-#{$size} {
+		min-height: $value;
+	}
 }
 
-.inline-size-0 {
-	inline-size: 0;
-}
-.inline-size-xs {
-	inline-size: 1rem;
-}
-.inline-size-sm {
-	inline-size: 2.5rem;
-}
-.inline-size-md {
-	inline-size: 5rem;
-}
-.inline-size-lg {
-	inline-size: 10rem;
-}
-.inline-size-xl {
-	inline-size: 20rem;
+@each $size, $value in $sizes {
+	.inline-size-#{$size} {
+		inline-size: $value;
+	}
+	.max-inline-size-#{$size} {
+		max-inline-size: $value;
+	}
+	.min-inline-size-#{$size} {
+		min-inline-size: $value;
+	}
 }
 
-.block-size-0 {
-	block-size: 0;
-}
-.block-size-xs {
-	block-size: 1rem;
-}
-.block-size-sm {
-	block-size: 2.5rem;
-}
-.block-size-md {
-	block-size: 5rem;
-}
-.block-size-lg {
-	block-size: 10rem;
-}
-.block-size-xl {
-	block-size: 20rem;
+@each $size, $value in $sizes {
+	.block-size-#{$size} {
+		block-size: $value;
+	}
+	.max-block-size-#{$size} {
+		max-block-size: $value;
+	}
+	.min-block-size-#{$size} {
+		min-block-size: $value;
+	}
 }

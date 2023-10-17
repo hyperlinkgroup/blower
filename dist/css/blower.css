@@ -1323,20 +1323,56 @@
     .width-0 {
       width: 0;
     }
+    .max-width-0 {
+      max-width: 0;
+    }
+    .min-width-0 {
+      min-width: 0;
+    }
     .width-xs {
       width: 1rem;
+    }
+    .max-width-xs {
+      max-width: 1rem;
+    }
+    .min-width-xs {
+      min-width: 1rem;
     }
     .width-sm {
       width: 2.5rem;
     }
+    .max-width-sm {
+      max-width: 2.5rem;
+    }
+    .min-width-sm {
+      min-width: 2.5rem;
+    }
     .width-md {
       width: 10rem;
+    }
+    .max-width-md {
+      max-width: 10rem;
+    }
+    .min-width-md {
+      min-width: 10rem;
     }
     .width-lg {
       width: 25rem;
     }
+    .max-width-lg {
+      max-width: 25rem;
+    }
+    .min-width-lg {
+      min-width: 25rem;
+    }
     .width-xl {
-      width: 50rem;
+      width: 60rem;
+    }
+    .max-width-xl {
+      max-width: 60rem;
+    }
+    .min-width-xl {
+      min-width: 60rem;
     }
     .width-25 {
       width: 25%;
@@ -1428,56 +1464,164 @@
     .height-0 {
       height: 0;
     }
+    .max-height-0 {
+      max-height: 0;
+    }
+    .min-height-0 {
+      min-height: 0;
+    }
     .height-xs {
       height: 1rem;
+    }
+    .max-height-xs {
+      max-height: 1rem;
+    }
+    .min-height-xs {
+      min-height: 1rem;
     }
     .height-sm {
       height: 2.5rem;
     }
-    .height-md {
-      height: 5rem;
+    .max-height-sm {
+      max-height: 2.5rem;
     }
-    .height-lg {
+    .min-height-sm {
+      min-height: 2.5rem;
+    }
+    .height-md {
       height: 10rem;
     }
+    .max-height-md {
+      max-height: 10rem;
+    }
+    .min-height-md {
+      min-height: 10rem;
+    }
+    .height-lg {
+      height: 25rem;
+    }
+    .max-height-lg {
+      max-height: 25rem;
+    }
+    .min-height-lg {
+      min-height: 25rem;
+    }
     .height-xl {
-      height: 20rem;
+      height: 60rem;
+    }
+    .max-height-xl {
+      max-height: 60rem;
+    }
+    .min-height-xl {
+      min-height: 60rem;
     }
     .inline-size-0 {
       inline-size: 0;
     }
+    .max-inline-size-0 {
+      max-inline-size: 0;
+    }
+    .min-inline-size-0 {
+      min-inline-size: 0;
+    }
     .inline-size-xs {
       inline-size: 1rem;
+    }
+    .max-inline-size-xs {
+      max-inline-size: 1rem;
+    }
+    .min-inline-size-xs {
+      min-inline-size: 1rem;
     }
     .inline-size-sm {
       inline-size: 2.5rem;
     }
-    .inline-size-md {
-      inline-size: 5rem;
+    .max-inline-size-sm {
+      max-inline-size: 2.5rem;
     }
-    .inline-size-lg {
+    .min-inline-size-sm {
+      min-inline-size: 2.5rem;
+    }
+    .inline-size-md {
       inline-size: 10rem;
     }
+    .max-inline-size-md {
+      max-inline-size: 10rem;
+    }
+    .min-inline-size-md {
+      min-inline-size: 10rem;
+    }
+    .inline-size-lg {
+      inline-size: 25rem;
+    }
+    .max-inline-size-lg {
+      max-inline-size: 25rem;
+    }
+    .min-inline-size-lg {
+      min-inline-size: 25rem;
+    }
     .inline-size-xl {
-      inline-size: 20rem;
+      inline-size: 60rem;
+    }
+    .max-inline-size-xl {
+      max-inline-size: 60rem;
+    }
+    .min-inline-size-xl {
+      min-inline-size: 60rem;
     }
     .block-size-0 {
       block-size: 0;
     }
+    .max-block-size-0 {
+      max-block-size: 0;
+    }
+    .min-block-size-0 {
+      min-block-size: 0;
+    }
     .block-size-xs {
       block-size: 1rem;
+    }
+    .max-block-size-xs {
+      max-block-size: 1rem;
+    }
+    .min-block-size-xs {
+      min-block-size: 1rem;
     }
     .block-size-sm {
       block-size: 2.5rem;
     }
-    .block-size-md {
-      block-size: 5rem;
+    .max-block-size-sm {
+      max-block-size: 2.5rem;
     }
-    .block-size-lg {
+    .min-block-size-sm {
+      min-block-size: 2.5rem;
+    }
+    .block-size-md {
       block-size: 10rem;
     }
+    .max-block-size-md {
+      max-block-size: 10rem;
+    }
+    .min-block-size-md {
+      min-block-size: 10rem;
+    }
+    .block-size-lg {
+      block-size: 25rem;
+    }
+    .max-block-size-lg {
+      max-block-size: 25rem;
+    }
+    .min-block-size-lg {
+      min-block-size: 25rem;
+    }
     .block-size-xl {
-      block-size: 20rem;
+      block-size: 60rem;
+    }
+    .max-block-size-xl {
+      max-block-size: 60rem;
+    }
+    .min-block-size-xl {
+      min-block-size: 60rem;
     }
     .block {
       display: block;
