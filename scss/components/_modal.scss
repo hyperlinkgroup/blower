@@ -19,8 +19,10 @@
 	--background-modal-footer: var(--background-modal-header);
 	--spacing-modal-close-button: #{fn.spacing()};
 	--position-modal: center;
+	--z-index-modal: 100;
 
 	position: fixed;
+	z-index: var(--z-index-modal);
 	inset: 0;
 	background-color: var(--color-backdrop-modal);
 	display: grid;
