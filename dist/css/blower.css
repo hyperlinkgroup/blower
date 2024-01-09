@@ -1474,6 +1474,24 @@
     .row-span-3 {
       grid-row: span 3;
     }
+    .height-25 {
+      height: 25%;
+    }
+    .height-50 {
+      height: 50%;
+    }
+    .height-75 {
+      height: 75%;
+    }
+    .height-100 {
+      height: 100%;
+    }
+    .height-third {
+      height: 33.3333333333%;
+    }
+    .height-twothirds {
+      height: 66.6666666667%;
+    }
     .height-0 {
       height: 0;
     }
