@@ -507,12 +507,17 @@
       outline: var(--width-button-outline-focus) solid transparent;
       outline-offset: var(--offset-button-outline-focus);
     }
-    .button:is(:hover, :focus-visible):not(:disabled) {
+    @media (hover: hover) {
+      .button:hover:not(:disabled) {
+        background-color: var(--color-button-background-hover);
+        border-color: var(--color-button-border-hover);
+        color: var(--color-button-text-hover);
+      }
+    }
+    .button:is(:focus-visible):not(:disabled) {
       background-color: var(--color-button-background-hover);
       border-color: var(--color-button-border-hover);
       color: var(--color-button-text-hover);
-    }
-    .button:focus-visible {
       outline: var(--width-button-outline-focus) solid var(--color-button-background-hover);
     }
     .button:active:not(:disabled) {

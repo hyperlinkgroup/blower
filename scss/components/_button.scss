@@ -40,13 +40,19 @@
 	outline: var(--width-button-outline-focus) solid transparent;
 	outline-offset: var(--offset-button-outline-focus);
 
-	&:is(:hover, :focus-visible):not(:disabled) {
+	@media (hover: hover) {
+
+		&:hover:not(:disabled) {
+			background-color: var(--color-button-background-hover);
+			border-color: var(--color-button-border-hover);
+			color: var(--color-button-text-hover);
+		}
+	}
+
+	&:is(:focus-visible):not(:disabled) {
 		background-color: var(--color-button-background-hover);
 		border-color: var(--color-button-border-hover);
 		color: var(--color-button-text-hover);
-	}
-
-	&:focus-visible {
 		outline: var(--width-button-outline-focus) solid var(--color-button-background-hover);
 	}
 
