@@ -1121,6 +1121,7 @@
       background-color: var(--select-arrow);
       -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
               clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+      z-index: 10;
     }
     .form__group {
       --size-input: 12em;
