@@ -1,4 +1,5 @@
 @use 'sass:math';
+@use 'throw';
 
 $default-min-bp: 320px;
 $default-max-bp: 1280px;
@@ -22,11 +23,25 @@ $default-max-bp: 1280px;
 /// Converts a pixel value to a rem value.
 ///
 /// @param {Number} $px
+/// @param {Number} $base
 /// @return {Number}
-@function px-to-rem($px) {
-	$rems: math.div($px, 16px) * 1rem;
+@function px-to-rem($px, $base: 16) {
+	@if not math.is-unitless($px) {
+		@return throw.error(
+			$message: '❌  ===> $px must be number without unit',
+			$source: 'px-to-rem',
+			$catch: true
+		);
+	}
+	@if not math.is-unitless($base) {
+		@return throw.error(
+			$message: '❌  ===> $base must be number without unit',
+			$source: 'px-to-rem',
+			$catch: true
+		);
+	}
 
-	@return $rems;
+	@return math.div($px, $base) * 1rem;
 }
 
 /// Creates a fluid unit to use for font sizes, paddings, margins, etc.
