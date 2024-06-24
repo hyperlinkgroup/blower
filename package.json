@@ -16,6 +16,7 @@
 		"lint": "stylelint '**/*.scss'",
 		"lint-fix": "stylelint '**/*.scss' --fix",
 		"test": "vitest",
+		"test:watch": "vitest --watch",
 		"test:coverage": "vitest run --coverage"
 	},
 	"keywords": [
