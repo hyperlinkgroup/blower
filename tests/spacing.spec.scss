@@ -1,0 +1,33 @@
+@use 'true' as *;
+@use '../scss/functions' as fn;
+@use '../scss/variables/base';
+
+@include describe('spacing function') {
+	@include it('Returns correct value for default parameters') {
+		@include assert-equal(
+				fn.spacing(),
+				base.$spacer
+		);
+	}
+
+	@include it('Returns correct value for custom multiplier') {
+		@include assert-equal(
+				fn.spacing(2),
+				base.$spacer * 2
+		);
+	}
+
+	@include it('Returns correct value for font-size-aware flag') {
+		@include assert-equal(
+				fn.spacing(1, true),
+				base.$spacer-font-size-aware
+		);
+	}
+
+	@include it('Returns correct value for custom multiplier and font-size-aware flag') {
+		@include assert-equal(
+				fn.spacing(2, true),
+				base.$spacer-font-size-aware * 2
+		);
+	}
+}
