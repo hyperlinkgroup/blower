@@ -1,5 +1,5 @@
 @use 'true' as *;
-@use '../scss/functions' as fn;
+@use '../../scss/functions/index' as fn;
 
 @include describe('is-number()') {
 	@include it('Returns true for a number') {

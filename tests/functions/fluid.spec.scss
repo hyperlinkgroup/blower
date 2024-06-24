@@ -1,5 +1,5 @@
 @use 'true' as *;
-@use '../scss/functions' as fn;
+@use '../../scss/functions/index' as fn;
 
 @include describe('round()') {
 	@include it('Rounds a number without decimals') {

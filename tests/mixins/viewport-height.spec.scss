@@ -1,0 +1,52 @@
+@use 'true' as *;
+@use '../../scss/mixins' as mx;
+
+@include describe('viewport-height mixin') {
+	@include it('Returns correct values for default parameters') {
+		@include assert {
+			@include output {
+				@include mx.viewport-height(50);
+			}
+			@include expect {
+				height: 50vh;
+				height: 50svh;
+			}
+		}
+	}
+
+	@include it('Returns correct values for custom type') {
+		@include assert {
+			@include output {
+				@include mx.viewport-height(50, 'min');
+			}
+			@include expect {
+				min-height: 50vh;
+				min-height: 50svh;
+			}
+		}
+	}
+
+	@include it('Returns correct values for custom dynamicUnit') {
+		@include assert {
+			@include output {
+				@include mx.viewport-height(50, 'min', 'dvh');
+			}
+			@include expect {
+				min-height: 50vh;
+				min-height: 50dvh;
+			}
+		}
+	}
+
+	@include it('Returns correct values for all custom parameters') {
+		@include assert {
+			@include output {
+				@include mx.viewport-height(50, 'max', 'lvh');
+			}
+			@include expect {
+				max-height: 50vh;
+				max-height: 50lvh;
+			}
+		}
+	}
+}

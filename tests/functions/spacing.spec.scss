@@ -1,6 +1,6 @@
 @use 'true' as *;
-@use '../scss/functions' as fn;
-@use '../scss/variables/base';
+@use '../../scss/functions/index' as fn;
+@use '../../scss/variables/base';
 
 @include describe('spacing function') {
 	@include it('Returns correct value for default parameters') {
