@@ -16,7 +16,9 @@
 		"lint": "stylelint '**/*.scss'",
 		"lint-fix": "stylelint '**/*.scss' --fix",
 		"test": "vitest",
-		"test:watch": "vitest --watch"
+		"test:watch": "vitest --watch",
+		"output:test": "sass tests/output-test/output-test.scss:tests/output-test/output-test.css",
+		"output:test:watch": "sass --watch tests/output-test/output-test.scss:tests/output-test/output-test.css"
 	},
 	"keywords": [
 		"css",
