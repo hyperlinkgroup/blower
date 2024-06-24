@@ -1,6 +1,36 @@
 @use 'true' as *;
 @use '../scss/functions/fluid';
 
+@include describe('round function') {
+	@include it('Rounds a number without decimals') {
+		@include assert-equal(
+				fluid.round(5.5),
+				6
+		);
+	}
+
+	@include it('Rounds a number with one decimal') {
+		@include assert-equal(
+				round(5.55, 1),
+				6
+		);
+	}
+
+	@include it('Rounds a number with two decimals') {
+		@include assert-equal(
+				round(5.555, 2),
+				6
+		);
+	}
+
+	@include it('Rounds a negative number') {
+		@include assert-equal(
+				round(-5.5),
+				-6
+		);
+	}
+}
+
 @include describe('px-to-rem()') {
 	@include it('should return the value in rem') {
 		@include assert-equal(
@@ -11,14 +41,14 @@
 	@include it('throws an error if $px is not a number without unit') {
 		@include assert-equal(
 				fluid.px-to-rem(12px),
-				'ERROR [px-to-rem]: ❌  ===> $px must be number without unit'
+				'ERROR [px-to-rem()]: ❌  ===> $px must be number without unit'
 		);
 	}
 
 	@include it('throws an error if $base is not a number without unit') {
 		@include assert-equal(
 				fluid.px-to-rem(12, 16px),
-				'ERROR [px-to-rem]: ❌  ===> $base must be number without unit'
+				'ERROR [px-to-rem()]: ❌  ===> $base must be number without unit'
 		);
 	}
 }

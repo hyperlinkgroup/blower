@@ -29,14 +29,14 @@ $default-max-bp: 1280px;
 	@if not math.is-unitless($px) {
 		@return throw.error(
 			$message: '❌  ===> $px must be number without unit',
-			$source: 'px-to-rem',
+			$source: 'px-to-rem()',
 			$catch: true
 		);
 	}
 	@if not math.is-unitless($base) {
 		@return throw.error(
 			$message: '❌  ===> $base must be number without unit',
-			$source: 'px-to-rem',
+			$source: 'px-to-rem()',
 			$catch: true
 		);
 	}
