@@ -1041,13 +1041,11 @@
       border-radius: 50%;
     }
     .form__input[type=radio]::before {
-      -webkit-clip-path: none;
-              clip-path: none;
+      clip-path: none;
       border-radius: inherit;
     }
     .form__input[type=checkbox]:not(.is-switch)::before {
-      -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-              clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     }
     .form__input[type=checkbox].is-switch {
       --translate-x: 0;
@@ -1119,8 +1117,7 @@
       width: 0.8em;
       height: 0.5em;
       background-color: var(--select-arrow);
-      -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-              clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+      clip-path: polygon(100% 0%, 0 0%, 50% 100%);
       z-index: 10;
     }
     .form__group {
