@@ -3,6 +3,10 @@
 	"version": "1.0.0-beta.18",
 	"description": "A modern frontend framework for modern browsers",
 	"main": "index.js",
+	"type": "module",
+	"engines": {
+		"node": ">=18"
+	},
 	"scripts": {
 		"watch": "sass --watch scss/blower.scss dist/css/blower.css && npm run watchAutoprefixer",
 		"watchAutoprefixer": "postcss dist/css/*.css --dir dist/css/ --watch --use autoprefixer",
@@ -10,7 +14,9 @@
 		"build": "sass scss/blower.scss dist/css/blower.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer",
 		"prod": "sass --no-source-map scss/blower.scss dist/css/blower.css && sass --no-source-map --style=compressed scss/blower.scss dist/css/blower.min.css && postcss dist/css/*.css --dir dist/css/ --use autoprefixer --no-map",
 		"lint": "stylelint '**/*.scss'",
-		"lint-fix": "stylelint '**/*.scss' --fix"
+		"lint-fix": "stylelint '**/*.scss' --fix",
+		"test": "vitest",
+		"test:coverage": "vitest run --coverage"
 	},
 	"keywords": [
 		"css",
@@ -39,6 +45,7 @@
 		"postcss-cli": "^11.0.0",
 		"sass": "^1.77.6",
 		"sass-true": "^8.0.0",
-		"stylelint": "^15.8.0"
+		"stylelint": "^15.8.0",
+		"vitest": "^1.6.0"
 	}
 }
