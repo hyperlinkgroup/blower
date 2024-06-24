@@ -1,0 +1,24 @@
+@use 'true' as *;
+@use '../scss/functions/fluid';
+
+@include describe('px-to-rem()') {
+	@include it('should return the value in rem') {
+		@include assert-equal(
+				fluid.px-to-rem(16), 1rem
+		);
+	}
+
+	@include it('throws an error if $px is not a number without unit') {
+		@include assert-equal(
+				fluid.px-to-rem(12px),
+				'ERROR [px-to-rem]: ❌  ===> $px must be number without unit'
+		);
+	}
+
+	@include it('throws an error if $base is not a number without unit') {
+		@include assert-equal(
+				fluid.px-to-rem(12, 16px),
+				'ERROR [px-to-rem]: ❌  ===> $base must be number without unit'
+		);
+	}
+}
