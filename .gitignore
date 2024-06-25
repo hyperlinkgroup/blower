@@ -12,3 +12,4 @@ npm-debug.log
 *.css.map
 *.sass.map
 *.scss.map
+tests/output-test/

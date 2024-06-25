@@ -1,112 +1,27 @@
-.absolute {
-	position: absolute;
+$positions: absolute relative fixed sticky;
+$insets: 0 xs sm md lg xl;
+$sides: top right bottom left;
+
+@each $position in $positions {
+	.#{$position} {
+		position: $position;
+		@if $position == 'sticky' {
+			top: 0;
+			z-index: 1;
+		}
+	}
 }
 
-.relative {
-	position: relative;
+@each $inset in $insets {
+	.inset-#{$inset} {
+		inset: if($inset == 0, 0, var(--blw-spacing-#{$inset}));
+	}
 }
 
-.fixed {
-	position: fixed;
-}
-
-.sticky {
-	position: sticky;
-	top: 0;
-	z-index: 1;
-}
-
-.inset-0 {
-	inset: 0;
-}
-.inset-xs {
-	inset: var(--blw-spacing-xs);
-}
-.inset-sm {
-	inset: var(--blw-spacing-sm);
-}
-.inset-md {
-	inset: var(--blw-spacing-md);
-}
-.inset-lg {
-	inset: var(--blw-spacing-lg);
-}
-.inset-xl {
-	inset: var(--blw-spacing-xl);
-}
-
-.top-0 {
-	top: 0;
-}
-.top-xs {
-	top: var(--blw-spacing-xs);
-}
-.top-sm {
-	top: var(--blw-spacing-sm);
-}
-.top-md {
-	top: var(--blw-spacing-md);
-}
-.top-lg {
-	top: var(--blw-spacing-lg);
-}
-.top-xl {
-	top: var(--blw-spacing-xl);
-}
-
-.right-0 {
-	right: 0;
-}
-.right-xs {
-	right: var(--blw-spacing-xs);
-}
-.right-sm {
-	right: var(--blw-spacing-sm);
-}
-.right-md {
-	right: var(--blw-spacing-md);
-}
-.right-lg {
-	right: var(--blw-spacing-lg);
-}
-.right-xl {
-	right: var(--blw-spacing-xl);
-}
-
-.bottom-0 {
-	bottom: 0;
-}
-.bottom-xs {
-	bottom: var(--blw-spacing-xs);
-}
-.bottom-sm {
-	bottom: var(--blw-spacing-sm);
-}
-.bottom-md {
-	bottom: var(--blw-spacing-md);
-}
-.bottom-lg {
-	bottom: var(--blw-spacing-lg);
-}
-.bottom-xl {
-	bottom: var(--blw-spacing-xl);
-}
-
-.left-0 {
-	left: 0;
-}
-.left-xs {
-	left: var(--blw-spacing-xs);
-}
-.left-sm {
-	left: var(--blw-spacing-sm);
-}
-.left-md {
-	left: var(--blw-spacing-md);
-}
-.left-lg {
-	left: var(--blw-spacing-lg);
-}
-.left-xl {
-	left: var(--blw-spacing-xl);
+@each $side in $sides {
+	@each $inset in $insets {
+		.#{$side}-#{$inset} {
+			#{$side}: if($inset == 0, 0, var(--blw-spacing-#{$inset}));
+		}
+	}
 }
