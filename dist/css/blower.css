@@ -370,6 +370,24 @@
       --color-alert-text: #0f172a;
       --color-alert-border: #e2e8f0;
     }
+    .alert[class*=alert--text-] {
+      --spacing-alert: 0;
+      --color-alert-background: transparent;
+      --border-width-alert: 0;
+      display: inline-block;
+    }
+    .alert--text-success {
+      --color-alert-text: #3F9A7A;
+    }
+    .alert--text-danger {
+      --color-alert-text: #D75052;
+    }
+    .alert--text-warning {
+      --color-alert-text: #DF8260;
+    }
+    .alert--text-info {
+      --color-alert-text: #00B8D4;
+    }
     .badge {
       --color-badge-background: #e2e8f0;
       --color-badge-background-hover: var(--color-badge-border);

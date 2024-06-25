@@ -3,6 +3,26 @@
 @use '../variables/transition';
 
 @use '../functions' as fn;
+@use '../mixins' as mx;
+
+/// Colors for different alert types
+/// Sorted by background, text and border color
+/// @type Map
+$alert-types: (
+	'success': (color.$positive-200, color.$positive-900, color.$positive-300),
+	'danger': (color.$danger-200, color.$danger-900, color.$danger-300),
+	'warning': (color.$warning-200, color.$warning-900, color.$warning-300),
+	'info': (color.$gray-200, color.$gray-900, color.$gray-300),
+	'dark': (color.$gray-600, #FFF, color.$gray-900),
+	'light': (color.$gray-100, color.$gray-900, color.$gray-200)
+);
+
+$alert-text-types: (
+	'success': color.$positive-600,
+	'danger': color.$danger-600,
+	'warning': color.$warning-600,
+	'info': color.$info-600,
+);
 
 .alert {
 	--color-alert-background: #{color.$primary};
@@ -90,39 +110,19 @@
 		padding-inline-end: calc(var(--spacing-alert) * 3.5);
 	}
 
-	&--success {
-		--color-alert-background: #{color.$positive-200};
-		--color-alert-text: #{color.$positive-900};
-		--color-alert-border: #{color.$positive-300};
+	@each $type, $colors in $alert-types {
+		@include mx.alert-type($type, nth($colors, 1), nth($colors, 2), nth($colors, 3));
 	}
 
-	&--danger {
-		--color-alert-background: #{color.$danger-200};
-		--color-alert-text: #{color.$danger-900};
-		--color-alert-border: #{color.$danger-300};
+	&[class*=alert--text-] {
+		--spacing-alert: 0;
+		--color-alert-background: transparent;
+		--border-width-alert: 0;
+
+		display: inline-block;
 	}
 
-	&--warning {
-		--color-alert-background: #{color.$warning-200};
-		--color-alert-text: #{color.$warning-900};
-		--color-alert-border: #{color.$warning-300};
-	}
-
-	&--info {
-		--color-alert-background: #{color.$gray-200};
-		--color-alert-text: #{color.$gray-900};
-		--color-alert-border: #{color.$gray-300};
-	}
-
-	&--dark {
-		--color-alert-background: #{color.$gray-600};
-		--color-alert-text: #FFF;
-		--color-alert-border: #{color.$gray-900};
-	}
-
-	&--light {
-		--color-alert-background: #{color.$gray-100};
-		--color-alert-text: #{color.$gray-900};
-		--color-alert-border: #{color.$gray-200};
+	@each $type, $color in $alert-text-types {
+		@include mx.alert-text-type($type, $color);
 	}
 }

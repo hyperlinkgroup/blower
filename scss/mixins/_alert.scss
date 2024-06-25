@@ -1,0 +1,13 @@
+@mixin alert-type($type, $background, $text, $border) {
+	&--#{$type} {
+		--color-alert-background: #{$background};
+		--color-alert-text: #{$text};
+		--color-alert-border: #{$border};
+	}
+}
+
+@mixin alert-text-type($type, $text) {
+	&--text-#{$type} {
+		--color-alert-text: #{$text};
+	}
+}
