@@ -5,7 +5,6 @@ $spacing-sizes: 0, auto, xs, sm, md, lg, xl;
 	$value: var(--blw-spacing-#{$size});
 	@if $size == 0 {
 		$value: 0;
-		@debug 0;
 	}
 	@if $size == auto {
 		$value: auto;
@@ -20,7 +19,6 @@ $spacing-sizes: 0, auto, xs, sm, md, lg, xl;
 
 	.mt-#{$size} {
 		margin-top: $value;
-		@debug $value;
 	}
 	.mb-#{$size} {
 		margin-bottom: $value;
