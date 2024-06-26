@@ -242,12 +242,26 @@
       text-decoration: none;
       transition: background-color 150ms;
     }
-    .navigation__link:is(:hover, :focus-visible) {
+    .navigation__link:not(.navigation--hover-follow .navigation__link):is(:hover, :focus-visible) {
       background-color: rgba(0, 0, 0, 0.1);
     }
-    .navigation__link:is(:active) {
+    .navigation__link:not(.navigation--hover-follow .navigation__link):is(:active) {
       transition-duration: 0ms;
       background-color: rgba(0, 0, 0, 0.2);
+    }
+    .navigation--hover-follow .highlight {
+      position: absolute;
+      z-index: -1;
+      transition-property: transform, width, height, color, background-color, opacity, left, top;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition-duration: 0.15s;
+      transition-delay: 0.15s;
+      transform-origin: 50% 50% 0;
+      opacity: 0;
+    }
+    .navigation--hover-follow .highlight.active {
+      opacity: 1;
+      background-color: rgba(0, 0, 0, 0.1);
     }
     .navigation--vertical.card {
       --spacing-links-horizontal: var(--spacing-card-horizontal);

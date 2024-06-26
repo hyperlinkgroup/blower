@@ -26,13 +26,31 @@
 		text-decoration: none;
 		transition: background-color 150ms;
 
-		&:is(:hover, :focus-visible) {
+		&:not(.navigation--hover-follow .navigation__link):is(:hover, :focus-visible) {
 			background-color: rgba(0, 0, 0, 0.1);
 		}
 
-		&:is(:active) {
+		&:not(.navigation--hover-follow .navigation__link):is(:active) {
 			transition-duration: 0ms;
 			background-color: rgba(0, 0, 0, 0.2);
+		}
+	}
+
+	&--hover-follow {
+		.highlight {
+			position: absolute;
+			z-index: -1;
+			transition-property: transform, width, height, color, background-color, opacity, left, top;
+			transition-timing-function: cubic-bezier(.4,0,.2,1);
+			transition-duration: .15s;
+			transition-delay: .15s;
+			transform-origin: 50% 50% 0;
+			opacity: 0;
+
+			&.active {
+				opacity: 1;
+				background-color: rgba(0, 0, 0, 0.1);
+			}
 		}
 	}
 
