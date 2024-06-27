@@ -1153,6 +1153,41 @@
     .form--horizontal .form__message {
       grid-column: 2/3;
     }
+    .marquee {
+      --gap-marquee: 0rem;
+      --animation-speed-marquee: 10s;
+      position: relative;
+      display: flex;
+      overflow: hidden;
+      -webkit-user-select: none;
+         -moz-user-select: none;
+              user-select: none;
+      gap: var(--gap);
+    }
+    .marquee__content {
+      flex-shrink: 0;
+      display: flex;
+      gap: var(--gap);
+      min-width: 100%;
+      list-style: none;
+      justify-content: space-around;
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .marquee__content {
+        animation-play-state: paused !important;
+      }
+    }
+    .is-animated .marquee__content {
+      animation: scroll var(--animation-speed-marquee) linear infinite;
+    }
+    @keyframes scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(calc(-100% - var(--gap)));
+      }
+    }
     .modal {
       --max-width-modal: 800px;
       --color-backdrop-modal: rgba(0, 0, 0, .4);
