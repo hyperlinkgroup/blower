@@ -453,9 +453,9 @@
     }
     .badge--dark {
       --color-badge-background: #475569;
-      --color-badge-background-hover: #64748b;
       --color-badge-text: #FFF;
       --color-badge-border: #0f172a;
+      --color-badge-background-hover: #64748b;
     }
     .badge--light {
       --color-badge-background: #f5f7fa;

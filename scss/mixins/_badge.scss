@@ -1,0 +1,9 @@
+@mixin badge-type($type, $background, $text, $border) {
+	&--#{$type} {
+		--color-badge-background: #{$background};
+		--color-badge-text: #{$text};
+		--color-badge-border: #{$border};
+
+		@content;
+	}
+}
