@@ -3,6 +3,19 @@
 @use '../variables/transition';
 
 @use '../functions' as fn;
+@use '../mixins' as mx;
+
+/// Colors for different badge types
+/// Sorted by background, text and border color
+/// @type Map
+$badge-types: (
+	primary: (color.$primary, color.$primary-50, color.$primary-600),
+	success: (color.$positive-200, color.$positive-900, color.$positive-300),
+	danger: (color.$danger-200, color.$danger-900, color.$danger-300),
+	warning: (color.$warning-200, color.$warning-900, color.$warning-300),
+	dark: (color.$gray-600, #FFF, color.$gray-900),
+	light: (color.$gray-100, color.$gray-900, color.$gray-200)
+);
 
 .badge {
 	--color-badge-background: #{color.$gray-200};
@@ -75,41 +88,12 @@
 		background-color: var(--color-badge-border);
 	}
 
-	&--primary {
-		--color-badge-background: #{color.$primary};
-		--color-badge-text: #{color.$primary-50};
-		--color-badge-border: #{color.$primary-600};
-	}
-
-	&--success {
-		--color-badge-background: #{color.$positive-200};
-		--color-badge-text: #{color.$positive-900};
-		--color-badge-border: #{color.$positive-300};
-	}
-
-	&--danger {
-		--color-badge-background: #{color.$danger-200};
-		--color-badge-text: #{color.$danger-900};
-		--color-badge-border: #{color.$danger-300};
-	}
-
-	&--warning {
-		--color-badge-background: #{color.$warning-200};
-		--color-badge-text: #{color.$warning-900};
-		--color-badge-border: #{color.$warning-300};
-	}
-
-	&--dark {
-		--color-badge-background: #{color.$gray-600};
-		--color-badge-background-hover: #{color.$gray-500};
-		--color-badge-text: #FFF;
-		--color-badge-border: #{color.$gray-900};
-	}
-
-	&--light {
-		--color-badge-background: #{color.$gray-100};
-		--color-badge-text: #{color.$gray-900};
-		--color-badge-border: #{color.$gray-200};
+	@each $type, $colors in $badge-types {
+		@include mx.badge-type($type, nth($colors, 1), nth($colors, 2), nth($colors, 3)) {
+			@if $type == dark {
+				--color-badge-background-hover: #{color.$gray-500};
+			}
+		};
 	}
 
 	.button & {

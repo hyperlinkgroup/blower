@@ -1,0 +1,37 @@
+@use "true" as *;
+@use "../../scss/mixins" as mx;
+
+@include test-module("Badge Mixin") {
+	@include test("Should apply correct colors for badge type") {
+		@include assert {
+			@include output {
+				@include mx.badge-type("info", "blue", "white", "darkblue");
+			}
+			@include expect {
+				&--info {
+					--color-badge-background: blue;
+					--color-badge-text: white;
+					--color-badge-border: darkblue;
+				}
+			}
+		}
+	}
+
+	@include test("Should apply correct colors for badge type with content") {
+		@include assert {
+			@include output {
+				@include mx.badge-type("warning", "yellow", "black", "orange") {
+					font-size: 1.2em;
+				}
+			}
+			@include expect {
+				&--warning {
+					--color-badge-background: yellow;
+					--color-badge-text: black;
+					--color-badge-border: orange;
+					font-size: 1.2em;
+				}
+			}
+		}
+	}
+}
