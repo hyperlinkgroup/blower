@@ -8,12 +8,12 @@
 	display: flex;
 	overflow: hidden;
 	user-select: none;
-	gap: var(--gap);
+	gap: var(--gap-marquee);
 
 	&__content {
 		flex-shrink: 0;
 		display: flex;
-		gap: var(--gap);
+		gap: var(--gap-marquee);
 		min-width: 100%;
 		list-style: none;
 		justify-content: space-around;
@@ -34,6 +34,6 @@
 		transform: translateX(0);
 	}
 	to {
-		transform: translateX(calc(-100% - var(--gap)));
+		transform: translateX(calc(-100% - var(--gap-marquee)));
 	}
 }
