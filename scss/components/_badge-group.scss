@@ -1,0 +1,20 @@
+@use '../variables/base';
+@use '../variables/color';
+
+@use '../functions' as fn;
+
+.badge-group {
+	border: 1px solid #{color.$gray-300};
+	padding: var(--spacing-badge-group-vertical, #{fn.spacing(.75)}) var(--spacing-badge-group-horizontal, #{fn.spacing(1)});
+	border-radius: var(--border-radius-badge-group, calc(#{base.$corner-radius} * 1.25));
+
+	&__wrapper, & {
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--spacing-badge-group-horizontal, #{fn.spacing(.5, true)});
+	}
+
+	&:has(.badge-group__wrapper) {
+		gap: var(--spacing-badge-group-title-horizontal, #{fn.spacing(1, true)});
+	}
+}

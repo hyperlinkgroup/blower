@@ -472,6 +472,19 @@
       border-radius: 50vmax;
       z-index: 1;
     }
+    .badge-group {
+      border: 1px solid #cbd5e1;
+      padding: var(--spacing-badge-group-vertical, 0.375rem) var(--spacing-badge-group-horizontal, 0.5rem);
+      border-radius: var(--border-radius-badge-group, calc(4px * 1.25));
+    }
+    .badge-group__wrapper, .badge-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-badge-group-horizontal, 0.25em);
+    }
+    .badge-group:has(.badge-group__wrapper) {
+      gap: var(--spacing-badge-group-title-horizontal, 0.5em);
+    }
     .button {
       --color-button-background: #4cb286;
       --color-button-text: #FFF;
