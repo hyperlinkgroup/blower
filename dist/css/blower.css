@@ -1155,7 +1155,9 @@
     }
     .marquee {
       --gap-marquee: 0rem;
-      --animation-speed-marquee: 10s;
+      --animation-speed-marquee: 30s;
+      --scroll-start-marquee: 0;
+      --scroll-end-marquee: calc(-100% - var(--gap-marquee));
       position: relative;
       display: flex;
       overflow: hidden;
@@ -1178,14 +1180,29 @@
       }
     }
     .is-animated .marquee__content {
-      animation: scroll var(--animation-speed-marquee) linear infinite;
+      will-change: transform;
+      animation: scroll-x var(--animation-speed-marquee) linear infinite;
     }
-    @keyframes scroll {
+    .is-animated .marquee--reverse .marquee__content {
+      animation-direction: reverse;
+    }
+    .marquee--hover-pause:hover .marquee__content {
+      animation-play-state: paused;
+    }
+    @keyframes scroll-x {
       from {
-        transform: translateX(0);
+        transform: translateX(var(--scroll-start-marquee));
       }
       to {
-        transform: translateX(calc(-100% - var(--gap-marquee)));
+        transform: translateX(var(--scroll-end-marquee));
+      }
+    }
+    @keyframes scroll-y {
+      from {
+        transform: translateY(var(--scroll-start-marquee));
+      }
+      to {
+        transform: translateY(var(--scroll-end-marquee));
       }
     }
     .modal {
