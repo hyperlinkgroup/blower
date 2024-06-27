@@ -258,6 +258,7 @@
       transition-delay: 0.15s;
       transform-origin: 50% 50% 0;
       opacity: 0;
+      border-radius: var(--border-radius-links);
     }
     .navigation--hover-follow .highlight.active {
       opacity: 1;
