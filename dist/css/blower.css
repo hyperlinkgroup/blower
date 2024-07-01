@@ -1201,7 +1201,8 @@
       left: 0;
     }
     .is-animated .marquee--pos-absolute .marquee__content:last-child {
-      animation-name: scroll-abs;
+      --scroll-start-marquee: calc(100% + var(--gap-marquee));
+      --scroll-end-marquee: 0;
     }
     .marquee--faded {
       -webkit-mask-image: linear-gradient(var(--mask-direction-marquee, to right), hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 20%, hsl(0, 0%, 0%) 80%, hsla(0, 0%, 0%, 0));
@@ -1231,14 +1232,6 @@
       }
       to {
         transform: translateY(var(--scroll-end-marquee));
-      }
-    }
-    @keyframes scroll-abs {
-      from {
-        transform: translateX(calc(100% + var(--gap-marquee)));
-      }
-      to {
-        transform: translateX(0);
       }
     }
     .modal {

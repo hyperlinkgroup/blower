@@ -65,7 +65,8 @@
 			left: 0;
 
 			.is-animated & {
-				animation-name: scroll-abs;
+				--scroll-start-marquee: calc(100% + var(--gap-marquee));
+				--scroll-end-marquee: 0;
 			}
 		}
 	}
@@ -103,14 +104,5 @@
 	}
 	to {
 		transform: translateY(var(--scroll-end-marquee));
-	}
-}
-
-@keyframes scroll-abs {
-	from {
-		transform: translateX(calc(100% + var(--gap-marquee)));
-	}
-	to {
-		transform: translateX(0);
 	}
 }
