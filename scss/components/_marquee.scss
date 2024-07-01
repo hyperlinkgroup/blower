@@ -1,7 +1,7 @@
 @use '../functions' as fn;
 
 .marquee {
-	--gap-marquee: 0rem;
+	--gap-marquee: 1rem;
 	--animation-speed-marquee: 30s;
 	--scroll-start-marquee: 0;
 	--scroll-end-marquee: calc(-100% - var(--gap-marquee));
@@ -19,6 +19,7 @@
 		min-width: 100%;
 		list-style: none;
 		padding: 0;
+		margin: 0;
 		justify-content: space-around;
 
 		/// Pause animation when reduced-motion is set
@@ -75,6 +76,15 @@
 
 	&--faded-vertical {
 		--mask-direction-marquee: to bottom;
+	}
+
+	&--vertical {
+		flex-direction: column;
+
+		.marquee__content {
+			flex-direction: column;
+			animation-name: scroll-y;
+		}
 	}
 }
 

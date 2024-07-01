@@ -1154,7 +1154,7 @@
       grid-column: 2/3;
     }
     .marquee {
-      --gap-marquee: 0rem;
+      --gap-marquee: 1rem;
       --animation-speed-marquee: 30s;
       --scroll-start-marquee: 0;
       --scroll-end-marquee: calc(-100% - var(--gap-marquee));
@@ -1173,6 +1173,7 @@
       min-width: 100%;
       list-style: none;
       padding: 0;
+      margin: 0;
       justify-content: space-around;
     }
     @media (prefers-reduced-motion: reduce) {
@@ -1208,6 +1209,13 @@
     }
     .marquee--faded-vertical {
       --mask-direction-marquee: to bottom;
+    }
+    .marquee--vertical {
+      flex-direction: column;
+    }
+    .marquee--vertical .marquee__content {
+      flex-direction: column;
+      animation-name: scroll-y;
     }
     @keyframes scroll-x {
       from {
