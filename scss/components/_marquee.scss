@@ -1,0 +1,108 @@
+@use '../functions' as fn;
+
+.marquee {
+	--gap-marquee: 1rem;
+	--animation-speed-marquee: 30s;
+	--scroll-start-marquee: 0;
+	--scroll-end-marquee: calc(-100% - var(--gap-marquee));
+
+	position: relative;
+	display: flex;
+	overflow: hidden;
+	user-select: none;
+	gap: var(--gap-marquee);
+
+	&__content {
+		flex-shrink: 0;
+		display: flex;
+		gap: var(--gap-marquee);
+		min-width: 100%;
+		list-style: none;
+		padding: 0;
+		margin: 0;
+		justify-content: space-around;
+
+		/// Pause animation when reduced-motion is set
+		@media (prefers-reduced-motion: reduce) {
+			animation-play-state: paused !important;
+		}
+
+		.is-animated & {
+			will-change: transform;
+			animation: scroll-x var(--animation-speed-marquee) linear infinite;
+		}
+	}
+
+	&--reverse {
+
+		.marquee__content {
+
+			.is-animated & {
+				animation-direction: reverse;
+			}
+		}
+	}
+
+	&--hover-pause {
+
+		&:hover {
+
+			.marquee__content {
+				animation-play-state: paused;
+			}
+		}
+	}
+
+	&--fit-content {
+		max-width: fit-content;
+	}
+
+	&--pos-absolute {
+
+		.marquee__content:last-child {
+			position: absolute;
+			top: 0;
+			left: 0;
+
+			.is-animated & {
+				--scroll-start-marquee: calc(100% + var(--gap-marquee));
+				--scroll-end-marquee: 0;
+			}
+		}
+	}
+
+	&--faded {
+		mask-image: linear-gradient(var(--mask-direction-marquee, to right), hsl(0 0% 0% / 0), hsl(0 0% 0% / 1) 20%, hsl(0 0% 0% / 1) 80%, hsl(0 0% 0% / 0));
+	}
+
+	&--faded-vertical {
+		--mask-direction-marquee: to bottom;
+	}
+
+	&--vertical {
+		flex-direction: column;
+
+		.marquee__content {
+			flex-direction: column;
+			animation-name: scroll-y;
+		}
+	}
+}
+
+@keyframes scroll-x {
+	from {
+		transform: translateX(var(--scroll-start-marquee));
+	}
+	to {
+		transform: translateX(var(--scroll-end-marquee));
+	}
+}
+
+@keyframes scroll-y {
+	from {
+		transform: translateY(var(--scroll-start-marquee));
+	}
+	to {
+		transform: translateY(var(--scroll-end-marquee));
+	}
+}
