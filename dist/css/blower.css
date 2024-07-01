@@ -1172,6 +1172,7 @@
       gap: var(--gap-marquee);
       min-width: 100%;
       list-style: none;
+      padding: 0;
       justify-content: space-around;
     }
     @media (prefers-reduced-motion: reduce) {
@@ -1189,6 +1190,25 @@
     .marquee--hover-pause:hover .marquee__content {
       animation-play-state: paused;
     }
+    .marquee--fit-content {
+      max-width: -moz-fit-content;
+      max-width: fit-content;
+    }
+    .marquee--pos-absolute .marquee__content:last-child {
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    .is-animated .marquee--pos-absolute .marquee__content:last-child {
+      animation-name: scroll-abs;
+    }
+    .marquee--faded {
+      -webkit-mask-image: linear-gradient(var(--mask-direction-marquee, to right), hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 20%, hsl(0, 0%, 0%) 80%, hsla(0, 0%, 0%, 0));
+              mask-image: linear-gradient(var(--mask-direction-marquee, to right), hsla(0, 0%, 0%, 0), hsl(0, 0%, 0%) 20%, hsl(0, 0%, 0%) 80%, hsla(0, 0%, 0%, 0));
+    }
+    .marquee--faded-vertical {
+      --mask-direction-marquee: to bottom;
+    }
     @keyframes scroll-x {
       from {
         transform: translateX(var(--scroll-start-marquee));
@@ -1203,6 +1223,14 @@
       }
       to {
         transform: translateY(var(--scroll-end-marquee));
+      }
+    }
+    @keyframes scroll-abs {
+      from {
+        transform: translateX(calc(100% + var(--gap-marquee)));
+      }
+      to {
+        transform: translateX(0);
       }
     }
     .modal {
