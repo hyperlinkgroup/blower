@@ -170,6 +170,10 @@
 		&[type='checkbox'] {
 
 			&:not(.is-switch)::before {
+				clip-path: circle();
+			}
+
+			&:checked:not(.is-switch)::before {
 				clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
 			}
 
