@@ -48,6 +48,8 @@
     body {
       font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
       line-height: 1.5;
+    }
+    body {
       min-height: 100vh;
       min-height: 100svh;
     }
@@ -141,8 +143,6 @@
       display: grid;
       grid-template-columns: 1fr;
       grid-template-areas: "sidebar" var(--area-row-first) "main" var(--area-row-last);
-      min-height: 100vh;
-      min-height: 100svh;
     }
     @media screen and (min-width: 768px) {
       .theme-dashboard {
@@ -158,6 +158,10 @@
       .theme-dashboard {
         --size-sidebar: 300px;
       }
+    }
+    .theme-dashboard {
+      min-height: 100vh;
+      min-height: 100svh;
     }
     .theme-dashboard .layout-sidebar {
       grid-area: sidebar;
@@ -1041,17 +1045,14 @@
       border-radius: 50%;
     }
     .form__input[type=radio]::before {
-      -webkit-clip-path: none;
-              clip-path: none;
+      clip-path: none;
       border-radius: inherit;
     }
     .form__input[type=checkbox]:not(.is-switch)::before {
-      -webkit-clip-path: circle();
-              clip-path: circle();
+      clip-path: circle();
     }
     .form__input[type=checkbox]:checked:not(.is-switch)::before {
-      -webkit-clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
-              clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
+      clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
     }
     .form__input[type=checkbox].is-switch {
       --translate-x: 0;
@@ -1123,8 +1124,7 @@
       width: 0.8em;
       height: 0.5em;
       background-color: var(--select-arrow);
-      -webkit-clip-path: polygon(100% 0%, 0 0%, 50% 100%);
-              clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+      clip-path: polygon(100% 0%, 0 0%, 50% 100%);
       z-index: 10;
     }
     .form__group {
@@ -1194,6 +1194,8 @@
       background-color: #fff;
       border-radius: var(--border-radius-modal);
       box-shadow: var(--box-shadow-modal);
+    }
+    .modal__content {
       max-height: 95vh;
       max-height: 95svh;
     }
