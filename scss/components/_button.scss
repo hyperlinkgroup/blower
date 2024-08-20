@@ -171,6 +171,18 @@
 		--spacing-button-vertical: #{fn.spacing(.5)};
 	}
 
+	&--image {
+		--border-width-button: 0;
+
+		padding: 0;
+		border-radius: calc(infinity * 1px);
+
+		img {
+			border-radius: calc(infinity * 1px);
+			object-fit: cover;
+		}
+	}
+
 	&--unset {
 		padding-inline: unset;
 		background: unset;
