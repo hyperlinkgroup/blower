@@ -170,4 +170,12 @@
 		--spacing-button-horizontal: #{fn.spacing(.75)};
 		--spacing-button-vertical: #{fn.spacing(.5)};
 	}
+
+	&--unset {
+		padding-inline: unset;
+		background: unset;
+		border: unset;
+		color: unset;
+		font-size: unset;
+	}
 }
