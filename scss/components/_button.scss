@@ -162,4 +162,12 @@
 	&--rounded {
 		--border-radius-button: 200px;
 	}
+
+	&--text {
+		@extend .button--outline;
+
+		--color-button-border: transparent;
+		--spacing-button-horizontal: #{fn.spacing(.75)};
+		--spacing-button-vertical: #{fn.spacing(.5)};
+	}
 }
