@@ -1,0 +1,59 @@
+@use 'true' as *;
+@use '../../scss/utilities/_display' as display;
+
+@include describe('Display utility generator') {
+	@each $display in display.$displays {
+		@include test('Display class .#{$display} exists and has correct properties') {
+			@include assert('Display class .#{$display} has correct properties') {
+				@include output {
+					.#{$display} {
+						display: $display;
+					}
+				}
+				@include expect {
+					.#{$display} {
+						display: $display;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include describe('Flex utility generator') {
+	@each $flex-direction in display.$flex-directions {
+		@include test('Flex-direction class .flex-#{$flex-direction} exists and has correct properties') {
+			@include assert('Flex-direction class .flex-#{$flex-direction} has correct properties') {
+				@include output {
+					.flex-#{$flex-direction} {
+						flex-direction: $flex-direction;
+					}
+				}
+				@include expect {
+					.flex-#{$flex-direction} {
+						flex-direction: $flex-direction;
+					}
+				}
+			}
+		}
+	}
+}
+
+@include describe('Flex-Wrap utility generator') {
+	@each $flex-wrap in display.$flex-wraps {
+		@include test('Flex-wrap class .flex-#{$flex-wrap} exists and has correct properties') {
+			@include assert('Flex-wrap class .flex-#{$flex-wrap} has correct properties') {
+				@include output {
+					.flex-#{$flex-wrap} {
+						flex-wrap: $flex-wrap;
+					}
+				}
+				@include expect {
+					.flex-#{$flex-wrap} {
+						flex-wrap: $flex-wrap;
+					}
+				}
+			}
+		}
+	}
+}

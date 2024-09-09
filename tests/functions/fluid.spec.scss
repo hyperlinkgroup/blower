@@ -1,0 +1,87 @@
+@use 'true' as *;
+@use '../../scss/functions/index' as fn;
+
+@include describe('round()') {
+	@include it('Rounds a number without decimals') {
+		@include assert-equal(
+				fn.round(5.5),
+				6
+		);
+	}
+
+	@include it('Rounds a number with one decimal') {
+		@include assert-equal(
+				fn.round(5.55, 1),
+				5.6
+		);
+	}
+
+	@include it('Rounds a number with two decimals') {
+		@include assert-equal(
+				fn.round(5.555, 2),
+				5.56
+		);
+	}
+
+	@include it('Rounds a negative number') {
+		@include assert-equal(
+				fn.round(-5.5),
+				-6
+		);
+	}
+}
+
+@include describe('px-to-rem()') {
+	@include it('should return the value in rem') {
+		@include assert-equal(
+				fn.px-to-rem(16px), 1rem
+		);
+	}
+
+	@include it('throws an error if $px is not a number') {
+		@include assert-equal(
+				fn.px-to-rem((16px, 2.2em, 3rem)),
+				'ERROR [px-to-rem()]: ❌  ===> $px and $base must be a number'
+		);
+	}
+
+	@include it('throws an error if $base is not a number') {
+		@include assert-equal(
+				fn.px-to-rem(12px, true),
+				'ERROR [px-to-rem()]: ❌  ===> $px and $base must be a number'
+		);
+	}
+}
+
+@include describe('fluid()') {
+	@include it('Returns correct values for default breakpoints and unit') {
+		@include assert-equal(
+				fn.fluid(16px, 24px),
+				clamp(1rem, 0.83vw + 0.83rem, 1.5rem),
+				$inspect: true
+		);
+	}
+
+	@include it('Returns correct values for custom breakpoints and unit') {
+		@include assert-equal(
+				fn.fluid(16px, 24px, 480px, 1920px, vh),
+				clamp(1rem, 0.56vh + 0.83rem, 1.5rem),
+				$inspect: true
+		);
+	}
+
+	@include it('Returns correct values for min-size equal to max-size') {
+		@include assert-equal(
+				fn.fluid(16px, 16px),
+				clamp(1rem, 0vw + 1rem, 1rem),
+				$inspect: true
+		);
+	}
+
+	@include it('Should throw an error if min-breakpoint and max-breakpoint are equal') {
+		@include assert-equal(
+				fn.fluid(16px, 24px, 480px, 480px),
+				'ERROR [fluid()]: ❌  ===> $min-breakpoint and $max-breakpoint should not be equal'
+		);
+	}
+}

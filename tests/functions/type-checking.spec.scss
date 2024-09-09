@@ -1,0 +1,34 @@
+@use 'true' as *;
+@use '../../scss/functions/index' as fn;
+
+@include describe('is-number()') {
+	@include it('Returns true for a number') {
+		@include assert-true(
+				fn.is-number(5)
+		);
+	}
+
+	@include it('Returns false for a string') {
+		@include assert-false(
+				fn.is-number('5')
+		);
+	}
+
+	@include it('Returns false for a null value') {
+		@include assert-false(
+				fn.is-number(null)
+		);
+	}
+
+	@include it('Returns false for a list') {
+		@include assert-false(
+				fn.is-number(1 2 3)
+		);
+	}
+
+	@include it('Returns false for a map') {
+		@include assert-false(
+				fn.is-number((key: value))
+		);
+	}
+}

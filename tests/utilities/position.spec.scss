@@ -1,0 +1,73 @@
+@use 'sass:math';
+@use 'true' as *;
+@use '../../scss/utilities/_position' as position;
+
+@include describe('Position utility generator') {
+	// Test for position classes
+	@each $position in position.$positions {
+		@include test('Position class .#{$position} exists and has correct properties') {
+			@include assert('Position class .#{$position} has correct properties') {
+				@include output {
+					.#{$position} {
+						position: #{$position};
+						@if $position == 'sticky' {
+							top: 0;
+							z-index: 1;
+						}
+					}
+				}
+				@include expect {
+					.#{$position} {
+						position: #{$position};
+						@if $position == 'sticky' {
+							top: 0;
+							z-index: 1;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@include describe('Inset position utility generator') {
+	// Test for inset classes
+	@each $inset in position.$insets {
+		@include test('Inset class .inset-#{$inset} exists and has correct properties') {
+			@include assert('Inset class .inset-#{$inset} has correct properties') {
+				@include output {
+					.inset-#{$inset} {
+						inset: if($inset == 0, 0, var(--blw-spacing-#{$inset}));
+					}
+				}
+				@include expect {
+					.inset-#{$inset} {
+						inset: if($inset == 0, 0, var(--blw-spacing-#{$inset}));
+					}
+				}
+			}
+		}
+	}
+}
+
+@include describe('Side position utility generator') {
+	// Test for side classes
+	@each $side in position.$sides {
+	  @each $inset in position.$insets {
+		@include test('Side class .#{$side}-#{$inset} exists and has correct properties') {
+		  @include assert('Side class .#{$side}-#{$inset} has correct properties') {
+			@include output {
+			  .#{$side}-#{$inset} {
+				#{$side}: if($inset == 0, 0, var(--blw-spacing-#{$inset}));
+			  }
+			}
+			@include expect {
+			  .#{$side}-#{$inset} {
+				#{$side}: if($inset == 0, 0, var(--blw-spacing-#{$inset}));
+			  }
+			}
+		  }
+		}
+	  }
+	}
+}
