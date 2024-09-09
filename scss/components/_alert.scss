@@ -6,15 +6,14 @@
 @use '../mixins' as mx;
 
 /// Colors for different alert types
-/// Sorted by background, text and border color
 /// @type Map
 $alert-types: (
-	'success': (color.$positive-200, color.$positive-900, color.$positive-300),
-	'danger': (color.$danger-200, color.$danger-900, color.$danger-300),
-	'warning': (color.$warning-200, color.$warning-900, color.$warning-300),
-	'info': (color.$gray-200, color.$gray-900, color.$gray-300),
-	'dark': (color.$gray-600, #FFF, color.$gray-900),
-	'light': (color.$gray-100, color.$gray-900, color.$gray-200)
+	'success': ('background': color.$positive-200, 'text': color.$positive-900, 'border-color': color.$positive-300),
+	'danger': ('background': color.$danger-200, 'text': color.$danger-900, 'border-color': color.$danger-300),
+	'warning': ('background': color.$warning-200, 'text': color.$warning-900, 'border-color': color.$warning-300),
+	'info': ('background': color.$gray-200, 'text': color.$gray-900, 'border-color': color.$gray-300),
+	'dark': ('background': color.$gray-600, 'text': #FFF, 'border-color': color.$gray-900),
+	'light': ('background': color.$gray-100, 'text': color.$gray-900, 'border-color': color.$gray-200)
 );
 
 $alert-text-types: (
@@ -111,7 +110,7 @@ $alert-text-types: (
 	}
 
 	@each $type, $colors in $alert-types {
-		@include mx.alert-type($type, nth($colors, 1), nth($colors, 2), nth($colors, 3));
+		@include mx.alert-type($type, map-get($colors, 'background'), map-get($colors, 'text'), map-get($colors, 'border-color'));
 	}
 
 	&[class*=alert--text-] {
