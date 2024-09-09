@@ -1,6 +1,6 @@
 {
 	"name": "@hyperlinkgroup/blower",
-	"version": "1.0.0-beta.18",
+	"version": "1.0.0-beta.20",
 	"description": "A modern frontend framework for modern browsers",
 	"main": "index.js",
 	"type": "module",
@@ -42,12 +42,12 @@
 	"author": "HYPERLINK Group",
 	"license": "MIT",
 	"devDependencies": {
-		"autoprefixer": "^10.4.19",
-		"postcss": "^8.4.38",
+		"autoprefixer": "^10.4.20",
+		"postcss": "^8.4.45",
 		"postcss-cli": "^11.0.0",
-		"sass": "^1.77.6",
+		"sass": "^1.78.0",
 		"sass-true": "^8.0.0",
-		"stylelint": "^15.8.0",
-		"vitest": "^1.6.0"
+		"stylelint": "^15.9.0",
+		"vitest": "^2.0.5"
 	}
 }

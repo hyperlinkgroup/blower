@@ -7,6 +7,9 @@
 	@if $type {
 		$type: '#{$type}-';
 	}
-	#{$type}height: #{$value}vh; // Fallback for browser that don't support dynamic viewport units yet
-	#{$type}height: #{$value}#{$dynamicUnit};
+
+	& {
+		#{$type}height: #{$value}vh; // Fallback for browser that don't support dynamic viewport units yet
+		#{$type}height: #{$value}#{$dynamicUnit};
+	}
 }
