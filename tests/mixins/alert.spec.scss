@@ -1,0 +1,34 @@
+@use 'true' as *;
+@use '../../scss/mixins' as mx;
+
+@include describe('alert-type mixin') {
+	@include test('Should apply correct styles for given type') {
+		@include assert {
+			@include output {
+				@include mx.alert-type('success', 'green', 'white', 'darkgreen');
+			}
+			@include expect {
+				&--success {
+					--color-alert-background: green;
+					--color-alert-text: white;
+					--color-alert-border: darkgreen;
+				}
+			}
+		}
+	}
+}
+
+@include describe('alert-text-type mixin') {
+	@include test('Should correctly set alert text color') {
+		@include assert {
+			@include output {
+				@include mx.alert-text-type('info', 'white');
+			}
+			@include expect {
+				&--text-info {
+					--color-alert-text: white;
+				}
+			}
+		}
+	}
+}
