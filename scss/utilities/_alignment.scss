@@ -1,82 +1,36 @@
-.align-center {
-	align-items: center;
-}
-.align-start {
-	align-items: start;
-}
-.align-end {
-	align-items: end;
-}
-.align-flex-start {
-	align-items: flex-start;
-}
-.align-flex-end {
-	align-items: flex-end;
-}
-.align-self-start {
-	align-items: self-start;
-}
-.align-self-end {
-	align-items: self-end;
-}
-.align-baseline {
-	align-items: baseline;
-}
-.align-stretch {
-	align-items: stretch;
-}
+$alignments: center start end flex-start flex-end self-start self-end baseline stretch;
 
-.justify-center {
-	justify-content: center;
-}
-.justify-start {
-	justify-content: start;
-}
-.justify-end {
-	justify-content: end;
-}
-.justify-flex-start {
-	justify-content: flex-start;
-}
-.justify-flex-end {
-	justify-content: flex-end;
-}
-.justify-space-between {
-	justify-content: space-between;
-}
-.justify-space-around {
-	justify-content: space-around;
-}
-.justify-space-evenly {
-	justify-content: space-evenly;
-}
-
-.text-center {
-	text-align: center;
-}
-.text-left {
-	text-align: left;
-}
-.text-right {
-	text-align: right;
-}
-.text-justify {
-	text-align: justify;
-}
-
-.pull-left {
-	float: left;
-
-	.flow & {
-		margin-inline-end: 1em;
-		margin-block-end: .5em;
+@each $alignment in $alignments {
+	.align-#{$alignment} {
+		align-items: $alignment;
 	}
 }
-.pull-right {
-	float: right;
 
-	.flow & {
-		margin-inline-start: 1em;
-		margin-block-end: .5em;
+$justifications: center start end flex-start flex-end space-between space-around space-evenly;
+
+@each $justification in $justifications {
+	.justify-#{$justification} {
+		justify-content: $justification;
+	}
+}
+
+$text-alignments: center left right justify;
+
+@each $text-alignment in $text-alignments {
+	.text-#{$text-alignment} {
+		text-align: $text-alignment;
+	}
+}
+
+$floats: left right;
+
+@each $float in $floats {
+	.pull-#{$float} {
+		float: $float;
+
+		.flow & {
+			margin-inline-#{if($float == 'left', 'end', 'start')}: 1em;
+			margin-block-end: .5em;
+		}
 	}
 }

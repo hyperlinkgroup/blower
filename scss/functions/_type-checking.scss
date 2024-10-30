@@ -1,0 +1,7 @@
+@use 'sass:meta';
+
+/// Checks if a value is a number.
+/// @param {Void} $value
+@function is-number($value) {
+	@return meta.type-of($value) == 'number';
+}
