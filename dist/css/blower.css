@@ -344,53 +344,59 @@
     .alert:is(:has(.alert__close):only-child, .is-dismissible) {
       padding-inline-end: calc(var(--spacing-alert) * 3.5);
     }
-    .alert--success {
+    .alert:where(.alert--success) {
       --color-alert-background: #E7FDF1;
       --color-alert-text: #0F2A2E;
       --color-alert-border: #B0F2D7;
     }
-    .alert--danger {
+    .alert:where(.alert--danger) {
       --color-alert-background: #FCD9DA;
       --color-alert-text: #461A1B;
       --color-alert-border: #FABBBD;
     }
-    .alert--warning {
+    .alert:where(.alert--warning) {
       --color-alert-background: #FEE9E1;
       --color-alert-text: #4A2E21;
       --color-alert-border: #FDD2C3;
     }
-    .alert--info {
+    .alert:where(.alert--info) {
       --color-alert-background: #e2e8f0;
       --color-alert-text: #0f172a;
       --color-alert-border: #cbd5e1;
     }
-    .alert--dark {
+    .alert:where(.alert--dark) {
       --color-alert-background: #475569;
       --color-alert-text: #FFF;
       --color-alert-border: #0f172a;
     }
-    .alert--light {
+    .alert:where(.alert--light) {
       --color-alert-background: #f5f7fa;
       --color-alert-text: #0f172a;
       --color-alert-border: #e2e8f0;
     }
-    .alert[class*=alert--text-] {
+    .alert--text {
       --spacing-alert: 0;
       --color-alert-background: transparent;
       --border-width-alert: 0;
       display: inline-block;
     }
-    .alert--text-success {
+    .alert--text:where(.alert--success) {
       --color-alert-text: #3F9A7A;
     }
-    .alert--text-danger {
+    .alert--text:where(.alert--danger) {
       --color-alert-text: #D75052;
     }
-    .alert--text-warning {
+    .alert--text:where(.alert--warning) {
       --color-alert-text: #DF8260;
     }
-    .alert--text-info {
+    .alert--text:where(.alert--info) {
       --color-alert-text: #00B8D4;
+    }
+    .alert--text:where(.alert--dark) {
+      --color-alert-text: #0f172a;
+    }
+    .alert--text:where(.alert--light) {
+      --color-alert-text: #94a3b8;
     }
     .badge {
       --color-badge-background: #e2e8f0;

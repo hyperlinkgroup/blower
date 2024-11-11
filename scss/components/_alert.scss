@@ -45,6 +45,8 @@ $alert-text-types: (
 	'danger': color.$danger-600,
 	'warning': color.$warning-600,
 	'info': color.$info-600,
+	'dark': color.$gray-900,
+	'light': color.$gray-400
 );
 
 .alert {
@@ -137,15 +139,15 @@ $alert-text-types: (
 		@include mx.alert-type($type, map-get($colors, 'background'), map-get($colors, 'text'), map-get($colors, 'border-color'));
 	}
 
-	&[class*=alert--text-] {
+	&--text {
 		--spacing-alert: 0;
 		--color-alert-background: transparent;
 		--border-width-alert: 0;
 
 		display: inline-block;
-	}
 
-	@each $type, $color in $alert-text-types {
-		@include mx.alert-text-type($type, $color);
+		@each $type, $color in $alert-text-types {
+			@include mx.alert-text-type($type, $color);
+		}
 	}
 }
