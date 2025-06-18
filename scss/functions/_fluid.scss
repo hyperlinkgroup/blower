@@ -23,8 +23,12 @@ $default-max-bp: 1280px;
 ///
 /// @param {Number} $px
 /// @return {Number}
-@function px-to-rem($px) {
-	$rems: math.div($px, 16px) * 1rem;
+@function px-to-rem($px, $base: 16px) {
+	@if (type-of($px) != 'number') or (type-of($base) != 'number') {
+		@return 'ERROR [px-to-rem()]: ❌  ===> $px and $base must be a number';
+	}
+
+	$rems: math.div($px, $base) * 1rem;
 
 	@return $rems;
 }
