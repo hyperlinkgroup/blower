@@ -8,7 +8,7 @@
 				@include mx.alert-type('success', 'green', 'white', 'darkgreen');
 			}
 			@include expect {
-				&--success {
+				&:where(.alert--success) {
 					--color-alert-background: green;
 					--color-alert-text: white;
 					--color-alert-border: darkgreen;
@@ -25,7 +25,7 @@
 				@include mx.alert-text-type('info', 'white');
 			}
 			@include expect {
-				&--text-info {
+				&:where(.alert--info) {
 					--color-alert-text: white;
 				}
 			}
